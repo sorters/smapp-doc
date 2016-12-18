@@ -1,0 +1,54 @@
+Based on this apparent need, the overall goal of this project is to design and develop an API based solution, a RESTful service to be more specific, and a proof-of-concept client application that consumes or uses this service in order to provide a solution to an hypothetical user.
+
+The RESTful service will include a running implementation (accessible from internet and running full-time for demo purposes) and its corresponding documentation, which also should be public and also available and accessible. For security purposes, the demo service will only allow read-only calls, but will use an existing environment with realistic data. 
+
+The key traits of the service are the following:
+
+\begin{enumerate}
+\item \textbf{Open-source:}
+The source code will be hosted on a public repository and (eventually) contributions to the project may be accepted. Any technologies and tools used  on the development of the project have to be strictly open-source.
+
+\item \textbf{Free:}
+The product and its use will be free of charges and costs.
+
+\item \textbf{Supported:}
+It will be supported by the community it gathers.
+
+\item \textbf{Standalone:}
+The solution will be standalone and only require infrastructure from the users, as opposed to a hosted service.
+
+\item \textbf{Multi-platform:}
+It will be based on Web technologies in order to provide support to as much platforms as possible.
+
+\item \textbf{Generic:}
+As in business-agnostic. The solution should be able to easily integrate with the concept of stock, independently of it being for a shop, warehouse or similar.
+\end{enumerate}
+
+According to the characteristics explored on the state of the art, the service will include support for each of these areas in the form of the following features:
+\section{Counting and quantifying}
+The service will work on and manage a database local to the system, which will store all the data necessary in order to keep track of the inventory. The structure of this data should be easily customizable to be adapted to the needs of different users. The set of features regarding this aspect must also include calls to place orders and account for sales. Support for this includes the need to support providers and customers. This is specified later in this section.
+\section{Ordering}
+The service must include support for categories and tags in the data structure. Although the structure has to be flexible and adaptable, a minimum set of features and characteristics will be enforced. These features shall be specified in more detail in the technical specification of the service.
+\section{Reporting}
+The service must allow to build reports on actual data at any given time. Again, the structure and format of these outputs should be as flexible as possible, and therefore the design must be made accordingly.
+\section{Demand forecasting}
+Support for this feature could reach a very complex level, even more lately with the popularity of machine learning and similar paradigms. For the time being, though, a partial solution will include a feature to set up automatic order placements based on thresholds set by the user.
+\section{Stock rotation}
+Support for this feature is not intended for the moment. but this area could be covered by a feature to allow time-based periodic order placements. The user of the solution should be able to configure the chronological constraints and customize the orders to place.
+\section{Accessibility}
+The accessibility issue is addressed by the fact that the solution is a REST service (an API) and therefore can be consumed easily by applications native to a varied and different set of environments, such as mobile apps, desktop apps, other handheld devices, etc.
+\section{Support for providers and customers}
+The solution has to include a minimal support for the management of provider and customer profiles, upon which orders and sales can be placed.
+\section{Possible obstacles}
+If the resulting solution is compliant with each and every constraint here described, then it can be considered a useful product. However there are a number of factors that could challenge the success of the project:
+
+\begin{addmargin}[1em]{0em}
+\textbf{Support is proportional to community growth:}
+Therefore future developments, such as added features or bug fixes, which depend on the community that builds up around the solution, might be little to non-existing, if it doesn’t gain popularity. There is little that can be done in a scenario like this, and this is a common risk with any open source project. The easy way out for this issue if this becomes a problem is to exceptionally allow or provide paid support and third party developments for users that need it and can afford it.
+
+\textbf{Authentication and security:}
+This is often one of the greatest challenges in this type of platforms. User trust depends greatly on this aspect, and errors or bad practices in this area might prove very costly. Issues in this aspect might cause users not trusting the platform and therefore the project could end up without having a community. However, given the small reach the platform is expected to have at start, it seems unlikely that it could be targeted by malicious third parties. That said, the design and development of the application will follow as much as possible the good practices and guidelines available in the open source community. Once the platform gains popularity, contributors with expertise on this area can further improve and extend the features needed to provide the necessary security and reliability expected from these kinds of platforms.
+
+\textbf{Input from users and clients:}
+While the scope of this project does include an MVP of a product based on the service, as a proof of concept, further solutions and platforms are expected to be developed by the users or third clients. This is not an uncommon problem on open source projects, and not much can be done about it.
+\end{addmargin}

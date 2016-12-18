@@ -1,71 +1,84 @@
 \documentclass{report}
+\usepackage{scrextend}
+\usepackage[parfill]{parskip}
+\usepackage{hyperref}
+\usepackage[official]{eurosym}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{newunicodechar}
+\usepackage{etoolbox}
+
+\graphicspath{ {images/} }
+
+\def\labelitemi{--}
+
+\def\code#1{\texttt{#1}}
+
 \begin{document}
 
-    \frontmatter
-        \title{Stock Management Application (SMAPP)}
-        \author{Robert Escuain Poole}
-        \author{Director: Lluís Pérez Vidal}
-        \maketitle
 
-        \begin{abstract}
-        The abstract text goes here.
-        \end{abstract}
+    \title{Stock Management Application (SMAPP)}
+    \author{Robert Escuain Poole\\Universitat Politècnica de Catalunya\\Director: Lluís Pérez Vidal}
+    \date{\today}
+    \maketitle
 
-    \mainmatter
-        \chapter{Context}
-        \input(chapters/context.tex)
-        
-        \chapter{State of the Art}
-        \input(chapters/stateoftheart.tex)
-        
-        \chapter{Formulation}
-        \input(chapters/formulation.tex)
-        
-        \chapter{Scope}
-        \input(chapters/scope.tex)
-        
-        \chapter{Work methodology}
-        \input(chapters/workmethodology.tex)
-        
-        \chapter{Project outline}
-        \input(chapters/projectoutline.tex)
-        
-        \chapter{Project phases}
-        \input(chapters/projectphases.tex)
-        
-        \chapter{Contigency plan}
-        \input(chapters/contingencyplan.tex)
-        
-        \chapter{Resources}
-        \input(chapters/resources.tex)
-        
-        \chapter{Project budget}
-        \input(chapters/projectbudget.tex)
-        
-        \chapter{Cost estimation}
-        \input(chapters/costestimation.tex)
-        
-        \chapter{Cost management}
-        \input(chapters/costmanagement.tex)
-        
-        \chapter{Sustainability study}
-        \input(chapters/sustainabilitystudy.tex)
-        
-        \chapter{Architecture of the solution}
-        \input(chapters/architectureofthesolution.tex)
-        
-        \chapter{Feature analysis}
-        \input(chapters/featureanalysis.tex)
-        
-        \chapter{Domain description}
-        \input(chapters/domaindescription.tex)
+    \tableofcontents
 
-    \backmatter
-        \chapter{References}
-        \input(references)
+    \chapter{Context}
+    \input{chapters/context.tex}
+    
+    \chapter{State of the Art}
+    \input{chapters/stateoftheart.tex}
+    
+    \chapter{Formulation}
+    \input{chapters/formulation.tex}
+    
+    \chapter{Scope}
+    \input{chapters/scope.tex}
+    
+    \chapter{Work methodology}
+    \input{chapters/workmethodology.tex}
+    
+    \chapter{Project outline}
+    \input{chapters/projectoutline.tex}
+    
+    \chapter{Project phases}
+    \input{chapters/projectphases.tex}
+    
+    \chapter{Contigency plan}
+    \input{chapters/contingencyplan.tex}
+    
+    \chapter{Resources}
+    \input{chapters/resources.tex}
+    
+    \chapter{Project budget}
+    \input{chapters/projectbudget.tex}
+    
+    \chapter{Cost estimation}
+    \input{chapters/costestimation.tex}
+    
+    \chapter{Cost management}
+    \input{chapters/costmanagement.tex}
+    
+    \chapter{Sustainability study}
+    \input{chapters/sustainabilitystudy.tex}
+    
+    \chapter{Architecture of the solution}
+    \input{chapters/architectureofthesolution.tex}
+    
+    \chapter{Feature analysis}
+    \input{chapters/featureanalysis.tex}
+    
+    \chapter{Domain description}
+    \input{chapters/domaindescription.tex}
 
-        \appendix
-            \chapter{Use case specification}
-            \input(usecasespecification)
+    \input{chapters/references.tex}
+
+    \appendix
+        \chapter{Use case specification}
+        \input{chapters/usecasespecification.tex}
 
 \end{document}

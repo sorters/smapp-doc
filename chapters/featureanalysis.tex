@@ -1,0 +1,205 @@
+From the areas described in section 4, the Scope of this project, a series of features can be defined, alongside their use cases. Being that the final product of this project is an API, the only actors here involved will be the Client and the System. The Client interacts with the System by doing calls to a series of endpoints that are provided by the API as an interface to the business logic of the solution. Also, for all use cases, the precondition of the Client being authenticated (logged in) in the System is assumed and will not be explicitly listed.
+
+The use cases here described provide an abstraction of the business logic and are agnostic to the actual implementation. Therefore the names used for the endpoints of the API or different features of the system may not coincide with the actual implementation. For the technically accurate documentation of the System please refer to the Technical Documentation of the API, which will be exposed as part of the implementation.
+
+The use of the term describe in the following sections refers to listing the attributes and their values for the elements it refers to. So \textit{describing} a product means listing the attributes of a product alongside the value of each one of them.
+
+\section{Counting and quantifying}
+For this feature, two entities arise: the Product and the Stock. The product is an abstraction of the goods that are being managed by the Client in his business, while the Stock is an abstraction for the actual existence of these goods. A product can have many stocks, the most usual case being to have a stock for each batch purchased. This allows a better tracking of the existences of the product, and where it comes from.
+
+To further clarify, in an hypothetical case there is a Client who manages Product A, but doesn’t have any in the warehouse, so has no Stock of this product. He has Product A, but no Stock of Product A. Once he has purchased a number (N) of items of Product A, he will have a Stock of N Product A’s. While still having this stock, the Client purchases another number M of items of Product A. Now he has two stocks of Product A, one with N and another with M items. The total stock of Product A is N+M.
+
+The most essential use cases when managing products are related to knowing what is exactly being managed in the system. There must be a feature that allows listing all the available products, and another one that allows getting all the information about a specific product. Additionally, upon a base of existing products, a user has to be able to create and add new products, and also modify any of the existing ones. Finally, there has to also be support for deleting existing products from the system.
+
+The resulting features for products, in the form of use cases, which are described in detail in the annex, are the following:
+
+\begin{itemize}
+\item List Products (UCP001)
+\item Describe Product (UCP002)
+\item Add Product (UCP003)
+\item Modify Product (UCP004)
+\item Delete Product (UCP005)
+\end{itemize}
+
+Regarding stocks, it is also required to be able to list them all, in order to provide hindsight of the bigger picture, if needed. A more critical feature, however, is to be able to view the existing stocks of a specific product. For this purpose, as described earlier, stocks are considered independent quantities of a product. In this particular case this is designed in this way to provide awareness on a practical level. Different stocks will represent, for instance, different batches of a product, usually bought and received at different moments in time.
+
+However, when referring to the stock or current stock of a product, in singular, it will mean to absolute quantity of units of that product available. A specific feature should allow to retrieve this information.
+
+Additionally, stocks should be increasable and decreasable. Stock increases are not a problem, because either the increase has to be done in a specific stock (determined in a manual way, so to say, by its ID) or the increase is represented by the creation of a whole new stock. However, stock decreases represent a problem because there must be a logic that determines from which of the available stocks the quantity should be removed. The native implementation for this will be a FIFO (first in, first out), so a given quantity will be removed starting from the oldest stock available.
+
+The resulting features regarding stocks, in the form of use cases, and detailed also in the annex, are as follow:
+
+\begin{itemize}
+\item List all Stocks (UCS001)
+\item View Product Stocks (UCS002)
+\item Get Product Stock (UCS003)
+\item Add to Product Stock (UCS004)
+\item Remove from Product Stock (UCS005)
+\end{itemize}
+
+Indirectly, the features described in this section provide indirect support for purchases and sales via the increase or decrease of the product stock. Although further support for this kind of transactions may be implemented natively in the solution, exposing this step will allow potential contributors to integrate different logics for purchases and sales, in conjunction with the logic that supports providers and customers, described later in its section.
+
+\section{Ordering}
+For this feature, two different entities appear: Categories and Tags. 
+
+A product can (but not must) belong to at most one category. As can be deduced by the name, categories help categorize different types of products according to certain characteristics. These categories are customized and managed by the user.
+
+This capability implies first a feature to list all the available categories. A user should be able to add to this categories by creating new ones, and also to modify existing ones. Additionally, a user should be able to remove and delete categories.
+
+A product can be assigned to a category when creating or modifying it. If a product is assigned to a category and that category is changed, the previous relationship ceases to exist, as one product can only belong to a single relationship. 
+
+This implies some features that allow knowing about this relationship. From one side, to know what category a specific product is assigned to, and from the other side of the relationship, which products are assigned to a specific category.
+
+The features for categories, in the form of use cases, are described in more detail in the annex and are as follow:
+
+\begin{itemize}
+\item List Categories (UCC001)
+\item Describe Category (UCC001)
+\item Add Category (UCC001)
+\item Modify Category (UCC001)
+\item Delete Category (UCC001)
+\item List Products of Category (UCC001)
+\item Assign Category to Product (UCC001)
+\end{itemize}
+
+In a similar way to categories, a product can have multiple tags assigned. Tags will represent an abstraction of a particular trait (temporary or not) that can be shared by multiple products across different categories. A specific scenario that showcases the use of tags could be a marketing campaign that affects a certain number of products. In order to easily identify these products, they can be assigned the tag related to the campaign while it lasts.
+
+Tags are not explicitly created. A tag comes to exist when it is assigned to a product. The reason for that is agility on the process. While categories are something more structured that require previous thought and design, the idea for the tags is they are to be used on the spot. Not having to create a tag before assigning it makes the process more agile, but less strict. This means a user has to use this logic with discretion, as it can easily lead to unmaintainable and unscalable inconsistencies, if not managed properly.
+
+A user also needs to be able to untag a product, by removing the tag from it. However, the tag will continue to exist.
+
+As with the categories, features have to enable to see the relationships between products and tags. A feature has to list the tags assigned to a product, and for the other way around, a feature has to list all the products that are tagged with a specific tag.
+
+These requirements imply the following features:
+
+\begin{itemize}
+\item Assign Tag to Product (UCT001)
+\item Remove Tag from Product (UCT002)
+\item Get Products by Tag (UCT003)
+\item List Product Tags (UCT004)
+\end{itemize}
+
+Further detail can be found in the annex, where this features are described in the form of use cases.
+
+\section{Reporting}
+The requirements for this section state that the service must allow to build reports on the current data at any given time. The features originating as a consequence from this will mostly use features from the other sections, typically the ones that refer to listing, filtering and ordering.
+
+Because of this, the features needed to fulfill these requirements can be completely based on the use cases of the other sections. Therefore this section will list the external features used, with the implication that they are however adapted to meet the purposes of this section, meaning that the response is expected to be in the form of reports.
+
+\section{Demand forecasting}
+Support for this feature could reach a very complex level, even more lately with the popularity of machine learning and similar paradigms. For the time being, though, a partial solution will include a feature to set up automatic order placements based on thresholds set by the user.
+
+Therefore this implies a set of features that implement a CRUD logic on an entity that will represent triggers, with thresholds to be checked each time the stock of a product is modified. Apart from creating, listing, updating and deleting these triggers, a user has to be able to enable and disable them, depending on if the thresholds have to be checked or not the next time the stock is intervened, and the triggers activated.
+
+Configuring a trigger means specifying a threshold, or the minimum stock below which an action has to be triggered. The action will be by default, on the native implementation, to place an order for a certain quantity of a product to a specific provider. All these parameters are part of the configuration of the trigger entity.
+
+The resulting features, which are further detailed in the annex in the form of use cases, are as follow:
+
+\begin{itemize}
+\item List Triggers (UCT001)
+\item Describe Triggers (UCT002)
+\item Add Trigger (UCT003)
+\item Modify Trigger (UCT004)
+\item Enable Trigger (UCT005)
+\item Disable Trigger (UCT006)
+\item Delete Trigger (UCT007)
+\end{itemize}
+
+\section{Stock rotation}
+Support for this feature is not intended for the moment. but this area could be covered by a feature to allow, for instance, time-based periodic order placements. The user of the solution should be able to configure the chronological constraints and customize the orders to place.
+
+\section{Support for providers and customers}
+For the features in this sections, two main entities will be created, those of Provider and Customer.
+
+The Provider entity is the most important of both because order placements are assigned to them. When creating an order to increase the stock of a product, a Provider has to be selected and this Provider will be the one whom the order is submitted to. Therefore a full CRUD feature is needed in order to be able to manage providers. Also, besides listing all the providers registered in the system, a user has to be able to list the specific details of a single provider.
+
+The features for managing providers, therefore, are the following:
+
+\begin{itemize}
+\item List Providers (UCPP001)
+\item Describe Provider (UCPP002)
+\item Add Provider (UCPP003)
+\item Modify Provider (UCPP004)
+\item Delete Provider (UCPP005)
+\end{itemize}
+
+In a different way, while the Customer entity can be important, it’s not mandatory. It can be used for Customer Relationship Management, or CRM, or in other words to keep track of who the products have been sold to. A full CRUD feature is again needed for this entity.
+
+The resulting features for customers are the following:
+
+\begin{itemize}
+\item List Customers (UCC001)
+\item Describe Customer (UCC002)
+\item Add Customer (UCC003)
+\item Modify Customer (UCC004)
+\item Delete Customer (UCC005)
+\end{itemize}
+
+Both sets of features can be found described in more detail, as use cases, in the annex.
+
+\section{Sales and Purchases}
+This section covers the features that allow the system to manage purchases to providers, and sales, either to specific customers or not. For this, several entities will be used. Although this logic could belong in the Counting and Quantifying section, it is documented separately as it depends on features from several other sections. 
+
+On the purchases side, there will be Purchase Orders, which will include Purchase Lines, each Purchase Line representing a product bought to a provider.
+
+A purchase order is created when the user needs to process purchase lines. A purchase line is created by the user in order to increase the stock of a given product. A line is created specifying the product to be purchased and the provider from which it will be purchased. There are two ways to have a purchase line in an order, either directly adding them as parameters when creating the purchase order (on the POST body, in the case of this project) or creating them separately with a specific feature, and then adding them to an existing order with another specific feature. This can be found explained in the user documentation of the API.
+
+By default, a purchase line will have a state of open, which means that it is pending processing. In a similar way, if an order has open lines, its state will also be open. This implies features to manage the state of both lines and orders. Additionally, a user might need to change lines from an order to another, as well as modifying these orders. Finally, a user has to be able to delete both lines and orders. To delete a line or an order, those have to be in a state of closed.
+
+These orders have to be visible, and besides listing all the orders, all the lines, and the lines of a specific order, a user has to be able to list purchase lines for a specific product and for a specific provider.
+
+Once purchase lines are ready to be processed (usually this is when the user receives the goods from the provider) a purchase line can be acknowledged. This results in the stock for that product being increased and the purchase line’s state to be changed to closed.
+
+Following is a summarized list of features that originate in this section. These features are described in the annex in the form of use cases.
+
+\begin{itemize}
+\item List Purchase Orders (UCPO001)
+\item Describe Purchase Order (UCPO002)
+\item Create Purchase Order (UCPO003)
+\item Edit Purchase Order (UCPO004)
+\item Close Purchase Order (UCPO005)
+\item Open Purchase Order (UCPO006)
+\item Delete Purchase Order (UCPO007)
+\item List Purchase Lines from Purchase Order (UCPO008)
+\item List Purchase Lines by Product (UCPO009)
+\item List Purchase Lines by Provider (UCPO010)
+\item Describe Purchase Line (UCPO011)
+\item Create Purchase Line (UCPO012)
+\item Edit Purchase Line (UCPO013)
+\item Assign Purchase Line to Purchase Order (UCPO014)
+\item Acknowledge Purchase Line (UCPO015)
+\item Delete Purchase Line (UCPO016)
+\end{itemize}
+
+On the sales side, there will be sales, which include sale lines. A sale can be assigned to a specific customer or not.
+
+A sale is created because an actual sale is happening or has happened. A sale includes one or more sale lines, each one for a specific product. Full sales, not sale lines, are optionally assigned to customers. This is different from purchases with providers, where the lines and no the order refer to the providers, and the reason for this is that usually one wouldn’t make a sale of multiple products to multiple customers, while it is common to make a purchase order of a set of products bought to different providers.
+
+Sales can be created as completed or as pending. The first case would be useful, for example, in scenarios like a supermarket, where the sale is done on the spot, while the second case would be for orders that can take time to deliver. This implies state for the orders, and features to manage this states.
+
+Features for listing all the sale orders, their lines, and the lines according to a criteria, such orders by customer or sale lines by product, are also needed. These orders and lines, in a similar way as to purchases, have to be modifiable and deletable.
+
+Finally, alike the feature that allows to acknowledge received purchase lines, a similar feature is needed to acknowledge sale lines. Once a line is delivered, and therefore the order for that product is fulfilled, this feature will change the state of the order to closed, and will reflect the sale on the stock of that product, decreasing by the quantity of the product sold because of the line.
+
+As a result, the following features are originated:
+
+\begin{itemize}
+\item List Sale Orders (UCSO001)
+\item List Sale Orders by Customer (UCSO002)
+\item Describe Sale Order (UCSO003)
+\item Create Sale Order (UCSO004)
+\item Edit Sale Order (UCSO005)
+\item Close Sale Order (UCSO006)
+\item Open Sale Order (UCSO007)
+\item Delete Sale Order (UCSO008)
+\item List Sale Lines from Sale Order (UCSO009)
+\item List Sale Lines by Product (UCSO010)
+\item Describe Sale Line (UCSO011)
+\item Create Sale Line (UCSO012)
+\item Edit Sale Line (UCSO013)
+\item Assign Sale Line to Sale Order (UCSO014)
+\item Acknowledge Sale Line (UCSO015)
+\item Delete Sale Line (UCSO016)
+\end{itemize}
+
+Further detail can be found on the annex, where these features are listed in the form of use cases.
