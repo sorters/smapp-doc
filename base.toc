@@ -82,3 +82,82 @@
 \contentsline {subsection}{\numberline {16.2.10}SaleOrder}{66}{subsection.16.2.10}
 \contentsline {subsection}{\numberline {16.2.11}SaleLine}{66}{subsection.16.2.11}
 \contentsline {chapter}{\numberline {A}Use case specification}{69}{appendix.A}
+\contentsline {section}{\numberline {A.1}Use cases for Product}{69}{section.A.1}
+\contentsline {subsubsection}{UCP001: List Products}{69}{section*.3}
+\contentsline {subsubsection}{UCP002: Describe Product}{69}{section*.4}
+\contentsline {subsubsection}{UCP003: Add Product}{70}{section*.5}
+\contentsline {subsubsection}{UCP004: Modify Product}{70}{section*.6}
+\contentsline {subsubsection}{UCP005: Delete Product}{71}{section*.7}
+\contentsline {section}{\numberline {A.2}Use cases for Stock}{71}{section.A.2}
+\contentsline {subsubsection}{UCS001: List all Stocks}{71}{section*.8}
+\contentsline {subsubsection}{UCS002: View Product Stocks}{71}{section*.9}
+\contentsline {subsubsection}{UCS003: Get Product Stock}{72}{section*.10}
+\contentsline {subsubsection}{UCS004: Add to Product Stock}{72}{section*.11}
+\contentsline {subsubsection}{UCS005: Remove from Product Stock}{73}{section*.12}
+\contentsline {section}{\numberline {A.3}Use cases for Categories}{73}{section.A.3}
+\contentsline {subsubsection}{UCC001: List Categories}{73}{section*.13}
+\contentsline {subsubsection}{UCC002: Describe Category}{73}{section*.14}
+\contentsline {subsubsection}{UCC003: Add Category}{74}{section*.15}
+\contentsline {subsubsection}{UCC004: Modify Category}{74}{section*.16}
+\contentsline {subsubsection}{UCC005: Delete Category}{75}{section*.17}
+\contentsline {subsubsection}{UCC006: List Products of Category}{75}{section*.18}
+\contentsline {subsubsection}{UCC007: Assign Category to Product}{75}{section*.19}
+\contentsline {section}{\numberline {A.4}Use cases for Tags}{76}{section.A.4}
+\contentsline {subsubsection}{UCT001: Assign Tag to Product}{76}{section*.20}
+\contentsline {subsubsection}{UCT002: Remove Tag from Product}{76}{section*.21}
+\contentsline {subsubsection}{UCT003: Get Products by Tag}{77}{section*.22}
+\contentsline {subsubsection}{UCT004: List Product Tags}{77}{section*.23}
+\contentsline {section}{\numberline {A.5}Use cases for Triggers}{78}{section.A.5}
+\contentsline {subsubsection}{UCTR001: List Triggers}{78}{section*.24}
+\contentsline {subsubsection}{UCTR002: Describe Triggers}{78}{section*.25}
+\contentsline {subsubsection}{UCTR003: Add Trigger}{78}{section*.26}
+\contentsline {subsubsection}{UCTR004: Modify Trigger}{78}{section*.27}
+\contentsline {subsubsection}{UCTR005: Enable Trigger}{78}{section*.28}
+\contentsline {subsubsection}{UCTR006: Disable Trigger}{78}{section*.29}
+\contentsline {subsubsection}{UCTR007: Delete Trigger}{78}{section*.30}
+\contentsline {section}{\numberline {A.6}Use cases for Providers}{78}{section.A.6}
+\contentsline {subsubsection}{UCPP001: List Providers}{78}{section*.31}
+\contentsline {subsubsection}{UCPP002: Describe Provider}{78}{section*.32}
+\contentsline {subsubsection}{UCPP003: Add Provider}{79}{section*.33}
+\contentsline {subsubsection}{UCPP004: Modify Provider}{79}{section*.34}
+\contentsline {subsubsection}{UCPP005: Delete Provider}{80}{section*.35}
+\contentsline {section}{\numberline {A.7}Use cases for Customers}{80}{section.A.7}
+\contentsline {subsubsection}{UCCU001: List Customers}{80}{section*.36}
+\contentsline {subsubsection}{UCCU002: Describe Customer}{80}{section*.37}
+\contentsline {subsubsection}{UCCU003: Add Customer}{81}{section*.38}
+\contentsline {subsubsection}{UCCU004: Modify Customer}{81}{section*.39}
+\contentsline {subsubsection}{UCCU005: Delete Customer}{82}{section*.40}
+\contentsline {section}{\numberline {A.8}Use cases for Purchases}{82}{section.A.8}
+\contentsline {subsubsection}{UCPO001: List Purchase Orders}{82}{section*.41}
+\contentsline {subsubsection}{UCPO002: Describe Purchase Order}{82}{section*.42}
+\contentsline {subsubsection}{UCPO003: Create Purchase Order}{83}{section*.43}
+\contentsline {subsubsection}{UCPO004: Edit Purchase Order}{83}{section*.44}
+\contentsline {subsubsection}{UCPO005: Close Purchase Order}{84}{section*.45}
+\contentsline {subsubsection}{UCPO006: Open Purchase Order}{84}{section*.46}
+\contentsline {subsubsection}{UCPO007: Delete Purchase Order}{84}{section*.47}
+\contentsline {subsubsection}{UCPO008: List Purchase Lines from Purchase Order}{85}{section*.48}
+\contentsline {subsubsection}{UCPO009: List Purchase Lines by Product}{85}{section*.49}
+\contentsline {subsubsection}{UCPO010: List Purchase Lines by Provider}{86}{section*.50}
+\contentsline {subsubsection}{UCPO011: Describe Purchase Line}{86}{section*.51}
+\contentsline {subsubsection}{UCPO012: Create Purchase Line}{86}{section*.52}
+\contentsline {subsubsection}{UCPO013: Edit Purchase Line}{87}{section*.53}
+\contentsline {subsubsection}{UCPO014: Assign Purchase Line to Purchase Order}{87}{section*.54}
+\contentsline {subsubsection}{UCPO015: Acknowledge Purchase Line}{88}{section*.55}
+\contentsline {subsubsection}{UCPO016: Delete Purchase Line}{88}{section*.56}
+\contentsline {section}{\numberline {A.9}Use cases for Sales}{89}{section.A.9}
+\contentsline {subsubsection}{UCSO001: List Sale Orders}{89}{section*.57}
+\contentsline {subsubsection}{UCSO002: List Sale Orders by Customer}{89}{section*.58}
+\contentsline {subsubsection}{UCSO003: Describe Sale Order}{89}{section*.59}
+\contentsline {subsubsection}{UCSO004: Create Sale Order}{90}{section*.60}
+\contentsline {subsubsection}{UCSO005: Edit Sale Order}{90}{section*.61}
+\contentsline {subsubsection}{UCSO006: Close Sale Order}{91}{section*.62}
+\contentsline {subsubsection}{UCSO007: Open Sale Order}{91}{section*.63}
+\contentsline {subsubsection}{UCSO008: Delete Sale Order}{91}{section*.64}
+\contentsline {subsubsection}{UCSO009: List Sale Lines from Sale Order}{92}{section*.65}
+\contentsline {subsubsection}{UCSO010: List Sale Lines by Product}{92}{section*.66}
+\contentsline {subsubsection}{UCSO011: Describe Sale Line}{93}{section*.67}
+\contentsline {subsubsection}{UCSO012: Create Sale Line}{93}{section*.68}
+\contentsline {subsubsection}{UCSO013: Edit Sale Line}{93}{section*.69}
+\contentsline {subsubsection}{UCSO014: Assign Sale Line to Sale Order}{94}{section*.70}
+\contentsline {subsubsection}{UCSO015: Acknowledge Sale Line}{94}{section*.71}
+\contentsline {subsubsection}{UCSO016: Delete Sale Line}{95}{section*.72}

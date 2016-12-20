@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.12.18)  18 DEC 2016 22:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.12.18)  21 DEC 2016 00:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -507,22 +507,22 @@ Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 ) (./base.aux)
 \openout1 = `base.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -532,9 +532,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count109
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
 
 (./base.out) (./base.out)
 \@outlinefile=\write5
@@ -573,12 +573,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -678,7 +678,7 @@ Chapter 14.
 (./chapters/architectureofthesolution.tex [32
 
 ]
-<images/oa.png, id=609, 622.325pt x 414.54875pt>
+<images/oa.png, id=654, 622.325pt x 414.54875pt>
 File: images/oa.png Graphic file (type png)
  <use images/oa.png>
 Package pdftex.def Info: images/oa.png used on input line 13.
@@ -839,7 +839,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-<images/to.png, id=632, 1143.27126pt x 372.39125pt>
+<images/to.png, id=677, 1143.27126pt x 372.39125pt>
 File: images/to.png Graphic file (type png)
  <use images/to.png>
 Package pdftex.def Info: images/to.png used on input line 125.
@@ -1195,7 +1195,7 @@ ght to a provider.
 [56] [57]) [58]
 Chapter 16.
 (./chapters/domaindescription.tex
-<images/smappclasses.png, id=728, 947.54pt x 756.8275pt>
+<images/smappclasses.png, id=908, 947.54pt x 756.8275pt>
 File: images/smappclasses.png Graphic file (type png)
 
 <use images/smappclasses.png>
@@ -1209,74 +1209,74 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 6--7
 [59
 
 ] [60 <./images/smappclasses.png>]
-<images/product.png, id=739, 144.54pt x 114.4275pt>
+<images/product.png, id=919, 144.54pt x 114.4275pt>
 File: images/product.png Graphic file (type png)
  <use images/product.png>
 Package pdftex.def Info: images/product.png used on input line 28.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
-<images/category.png, id=740, 144.54pt x 114.4275pt>
+<images/category.png, id=920, 144.54pt x 114.4275pt>
 File: images/category.png Graphic file (type png)
  <use images/category.png>
 Package pdftex.def Info: images/category.png used on input line 43.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
-[61 <./images/product.png>] <images/tag.png, id=746, 144.54pt x 114.4275pt>
+[61 <./images/product.png>] <images/tag.png, id=926, 144.54pt x 114.4275pt>
 File: images/tag.png Graphic file (type png)
 
 <use images/tag.png>
 Package pdftex.def Info: images/tag.png used on input line 57.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
- <images/stock.png, id=747, 144.54pt x 114.4275pt>
+ <images/stock.png, id=927, 144.54pt x 114.4275pt>
 File: images/stock.png Graphic file (type png)
 
 <use images/stock.png>
 Package pdftex.def Info: images/stock.png used on input line 70.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
  [62 <./images/category.png> <./images/tag.png> <./images/stock.png>] <images/p
-rovider.png, id=755, 144.54pt x 114.4275pt>
+rovider.png, id=935, 144.54pt x 114.4275pt>
 File: images/provider.png Graphic file (type png)
 
 <use images/provider.png>
 Package pdftex.def Info: images/provider.png used on input line 88.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
  [63 <./images/provider.png>]
-<images/productoffer.png, id=761, 144.54pt x 114.4275pt>
+<images/productoffer.png, id=941, 144.54pt x 114.4275pt>
 File: images/productoffer.png Graphic file (type png)
 
 <use images/productoffer.png>
 Package pdftex.def Info: images/productoffer.png used on input line 102.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
-<images/purchaseorder.png, id=762, 144.54pt x 114.4275pt>
+<images/purchaseorder.png, id=942, 144.54pt x 114.4275pt>
 File: images/purchaseorder.png Graphic file (type png)
 
 <use images/purchaseorder.png>
 Package pdftex.def Info: images/purchaseorder.png used on input line 116.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
  [64 <./images/productoffer.png> <./images/purchaseorder.png>] <images/purchase
-line.png, id=769, 144.54pt x 114.4275pt>
+line.png, id=949, 144.54pt x 114.4275pt>
 File: images/purchaseline.png Graphic file (type png)
 
 <use images/purchaseline.png>
 Package pdftex.def Info: images/purchaseline.png used on input line 130.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
-<images/customer.png, id=770, 144.54pt x 114.4275pt>
+<images/customer.png, id=950, 144.54pt x 114.4275pt>
 File: images/customer.png Graphic file (type png)
  <use images/customer.png>
 Package pdftex.def Info: images/customer.png used on input line 145.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
 [65 <./images/purchaseline.png> <./images/customer.png>]
-<images/saleorder.png, id=777, 144.54pt x 114.4275pt>
+<images/saleorder.png, id=957, 144.54pt x 114.4275pt>
 File: images/saleorder.png Graphic file (type png)
 
 <use images/saleorder.png>
 Package pdftex.def Info: images/saleorder.png used on input line 159.
 (pdftex.def)             Requested size: 72.2698pt x 57.21361pt.
 
-<images/saleline.png, id=778, 144.54pt x 114.4275pt>
+<images/saleline.png, id=958, 144.54pt x 114.4275pt>
 File: images/saleline.png Graphic file (type png)
  <use images/saleline.png>
 Package pdftex.def Info: images/saleline.png used on input line 173.
@@ -1327,28 +1327,94 @@ cessed 26
 
 ]
 Appendix A.
-(./chapters/usecasespecification.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
- [69
+(./chapters/usecasespecification.tex (./chapters/usecases/product.tex [69
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
+[70]) (./chapters/usecases/stock.tex
+Underfull \hbox (badness 10000) in paragraph at lines 98--1
+
+ []
+
+[71] [72]) (./chapters/usecases/category.tex [73]
+Overfull \hbox (9.27718pt too wide) in paragraph at lines 54--55
+[]\OT1/cmr/m/n/10 The Sys-tem re-sponds with the ID (cid) of the newly cre-ated
+ cat-e-gory. 
+ []
+
+
+Overfull \hbox (0.50056pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10 The name at-tribute value pro-vided is not used by an-other c
+at-e-gory. 
+ []
+
+[74]
+Overfull \hbox (7.00049pt too wide) in paragraph at lines 98--99
+[]\OT1/cmr/m/n/10 The cat-e-gory cid has been deleted and no longer ex-ists in 
+the sys-tem. 
+ []
+
+[75]) (./chapters/usecases/tag.tex [76]) (./chapters/usecases/trigger.tex)
+(./chapters/usecases/provider.tex [77] [78]
+Overfull \hbox (10.41609pt too wide) in paragraph at lines 54--55
+[]\OT1/cmr/m/n/10 The Sys-tem re-sponds with the ID (pid) of the newly cre-ated
+ provider. 
+ []
+
+
+Overfull \hbox (0.52835pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10 The name at-tribute value pro-vided is not used by an-other p
+rovider. 
+ []
+
+[79]) (./chapters/usecases/customer.tex
+Underfull \hbox (badness 10000) in paragraph at lines 100--1
+
+ []
+
+[80]
+Overfull \hbox (12.66606pt too wide) in paragraph at lines 54--55
+[]\OT1/cmr/m/n/10 The Sys-tem re-sponds with the ID (cid) of the newly cre-ated
+ cus-tomer. 
+ []
+
+
+Overfull \hbox (3.88945pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10 The name at-tribute value pro-vided is not used by an-other c
+us-tomer. 
+ []
+
+[81]) (./chapters/usecases/purchase.tex [82] [83] [84] [85] [86]
+Overfull \hbox (11.24945pt too wide) in paragraph at lines 254--255
+[]\OT1/cmr/m/n/10 The Sys-tem re-sponds with the ID (plid) of the mod-i-fied pu
+r-chase line. 
+ []
+
+[87]) (./chapters/usecases/sale.tex [88] [89] [90] [91] [92]
+Overfull \hbox (9.36049pt too wide) in paragraph at lines 229--230
+[]\OT1/cmr/m/n/10 The Sys-tem re-sponds with the ID (slid) of the newly cre-ate
+d sale line. 
+ []
+
+[93] [94]))
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
+ [95]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
  (./base.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
 Package rerunfilecheck Info: File `base.out' has not changed.
-(rerunfilecheck)             Checksum: 47BB943A5302539A5C3351FCADCB8E7D;5119.
+(rerunfilecheck)             Checksum: 910FD27AFA9F4CF924F58214DFBF54D1;5743.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 8353 strings out of 493304
- 123669 string characters out of 6139870
- 226423 words of memory out of 5000000
- 11393 multiletter control sequences out of 15000+600000
+ 8587 strings out of 493304
+ 126978 string characters out of 6139870
+ 230321 words of memory out of 5000000
+ 11500 multiletter control sequences out of 15000+600000
  13940 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,7n,45p,1035b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1365,10 +1431,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 tt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feybr10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on base.pdf (70 pages, 504336 bytes).
+Output written on base.pdf (96 pages, 536485 bytes).
 PDF statistics:
- 887 PDF objects out of 1000 (max. 8388607)
- 766 compressed objects within 8 object streams
- 170 named destinations out of 1000 (max. 500000)
- 743 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1206 PDF objects out of 1440 (max. 8388607)
+ 1056 compressed objects within 11 object streams
+ 275 named destinations out of 1000 (max. 500000)
+ 815 words of extra memory for PDF output out of 10000 (max. 10000000)
 

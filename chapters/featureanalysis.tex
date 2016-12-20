@@ -14,11 +14,11 @@ The most essential use cases when managing products are related to knowing what 
 The resulting features for products, in the form of use cases, which are described in detail in the annex, are the following:
 
 \begin{itemize}
-\item List Products (UCP001)
-\item Describe Product (UCP002)
-\item Add Product (UCP003)
-\item Modify Product (UCP004)
-\item Delete Product (UCP005)
+\item \nameref{UCP001}
+\item \nameref{UCP002}
+\item \nameref{UCP003}
+\item \nameref{UCP004}
+\item \nameref{UCP005}
 \end{itemize}
 
 Regarding stocks, it is also required to be able to list them all, in order to provide hindsight of the bigger picture, if needed. A more critical feature, however, is to be able to view the existing stocks of a specific product. For this purpose, as described earlier, stocks are considered independent quantities of a product. In this particular case this is designed in this way to provide awareness on a practical level. Different stocks will represent, for instance, different batches of a product, usually bought and received at different moments in time.
@@ -30,11 +30,11 @@ Additionally, stocks should be increasable and decreasable. Stock increases are 
 The resulting features regarding stocks, in the form of use cases, and detailed also in the annex, are as follow:
 
 \begin{itemize}
-\item List all Stocks (UCS001)
-\item View Product Stocks (UCS002)
-\item Get Product Stock (UCS003)
-\item Add to Product Stock (UCS004)
-\item Remove from Product Stock (UCS005)
+\item \nameref{UCS001}
+\item \nameref{UCS002}
+\item \nameref{UCS003}
+\item \nameref{UCS004}
+\item \nameref{UCS005}
 \end{itemize}
 
 Indirectly, the features described in this section provide indirect support for purchases and sales via the increase or decrease of the product stock. Although further support for this kind of transactions may be implemented natively in the solution, exposing this step will allow potential contributors to integrate different logics for purchases and sales, in conjunction with the logic that supports providers and customers, described later in its section.
@@ -53,13 +53,13 @@ This implies some features that allow knowing about this relationship. From one 
 The features for categories, in the form of use cases, are described in more detail in the annex and are as follow:
 
 \begin{itemize}
-\item List Categories (UCC001)
-\item Describe Category (UCC001)
-\item Add Category (UCC001)
-\item Modify Category (UCC001)
-\item Delete Category (UCC001)
-\item List Products of Category (UCC001)
-\item Assign Category to Product (UCC001)
+\item \nameref{UCC001}
+\item \nameref{UCC001}
+\item \nameref{UCC001}
+\item \nameref{UCC001}
+\item \nameref{UCC001}
+\item \nameref{UCC001}
+\item \nameref{UCC001}
 \end{itemize}
 
 In a similar way to categories, a product can have multiple tags assigned. Tags will represent an abstraction of a particular trait (temporary or not) that can be shared by multiple products across different categories. A specific scenario that showcases the use of tags could be a marketing campaign that affects a certain number of products. In order to easily identify these products, they can be assigned the tag related to the campaign while it lasts.
@@ -73,10 +73,10 @@ As with the categories, features have to enable to see the relationships between
 These requirements imply the following features:
 
 \begin{itemize}
-\item Assign Tag to Product (UCT001)
-\item Remove Tag from Product (UCT002)
-\item Get Products by Tag (UCT003)
-\item List Product Tags (UCT004)
+\item \nameref{UCT001}
+\item \nameref{UCT002}
+\item \nameref{UCT003}
+\item \nameref{UCT004}
 \end{itemize}
 
 Further detail can be found in the annex, where this features are described in the form of use cases.
@@ -96,13 +96,13 @@ Configuring a trigger means specifying a threshold, or the minimum stock below w
 The resulting features, which are further detailed in the annex in the form of use cases, are as follow:
 
 \begin{itemize}
-\item List Triggers (UCT001)
-\item Describe Triggers (UCT002)
-\item Add Trigger (UCT003)
-\item Modify Trigger (UCT004)
-\item Enable Trigger (UCT005)
-\item Disable Trigger (UCT006)
-\item Delete Trigger (UCT007)
+\item \nameref{UCTR001}
+\item \nameref{UCTR002}
+\item \nameref{UCTR003}
+\item \nameref{UCTR004}
+\item \nameref{UCTR005}
+\item \nameref{UCTR006}
+\item \nameref{UCTR007}
 \end{itemize}
 
 \section{Stock rotation}
@@ -116,11 +116,11 @@ The Provider entity is the most important of both because order placements are a
 The features for managing providers, therefore, are the following:
 
 \begin{itemize}
-\item List Providers (UCPP001)
-\item Describe Provider (UCPP002)
-\item Add Provider (UCPP003)
-\item Modify Provider (UCPP004)
-\item Delete Provider (UCPP005)
+\item \nameref{UCPP001}
+\item \nameref{UCPP002}
+\item \nameref{UCPP003}
+\item \nameref{UCPP004}
+\item \nameref{UCPP005}
 \end{itemize}
 
 In a different way, while the Customer entity can be important, it’s not mandatory. It can be used for Customer Relationship Management, or CRM, or in other words to keep track of who the products have been sold to. A full CRUD feature is again needed for this entity.
@@ -128,11 +128,11 @@ In a different way, while the Customer entity can be important, it’s not manda
 The resulting features for customers are the following:
 
 \begin{itemize}
-\item List Customers (UCC001)
-\item Describe Customer (UCC002)
-\item Add Customer (UCC003)
-\item Modify Customer (UCC004)
-\item Delete Customer (UCC005)
+\item \nameref{UCCU001}
+\item \nameref{UCCU002}
+\item \nameref{UCCU003}
+\item \nameref{UCCU004}
+\item \nameref{UCCU005}
 \end{itemize}
 
 Both sets of features can be found described in more detail, as use cases, in the annex.
@@ -153,22 +153,22 @@ Once purchase lines are ready to be processed (usually this is when the user rec
 Following is a summarized list of features that originate in this section. These features are described in the annex in the form of use cases.
 
 \begin{itemize}
-\item List Purchase Orders (UCPO001)
-\item Describe Purchase Order (UCPO002)
-\item Create Purchase Order (UCPO003)
-\item Edit Purchase Order (UCPO004)
-\item Close Purchase Order (UCPO005)
-\item Open Purchase Order (UCPO006)
-\item Delete Purchase Order (UCPO007)
-\item List Purchase Lines from Purchase Order (UCPO008)
-\item List Purchase Lines by Product (UCPO009)
-\item List Purchase Lines by Provider (UCPO010)
-\item Describe Purchase Line (UCPO011)
-\item Create Purchase Line (UCPO012)
-\item Edit Purchase Line (UCPO013)
-\item Assign Purchase Line to Purchase Order (UCPO014)
-\item Acknowledge Purchase Line (UCPO015)
-\item Delete Purchase Line (UCPO016)
+\item \nameref{UCPO001}
+\item \nameref{UCPO002}
+\item \nameref{UCPO003}
+\item \nameref{UCPO004}
+\item \nameref{UCPO005}
+\item \nameref{UCPO006}
+\item \nameref{UCPO007}
+\item \nameref{UCPO008}
+\item \nameref{UCPO009}
+\item \nameref{UCPO010}
+\item \nameref{UCPO011}
+\item \nameref{UCPO012}
+\item \nameref{UCPO013}
+\item \nameref{UCPO014}
+\item \nameref{UCPO015}
+\item \nameref{UCPO016}
 \end{itemize}
 
 On the sales side, there will be sales, which include sale lines. A sale can be assigned to a specific customer or not.
@@ -184,22 +184,22 @@ Finally, alike the feature that allows to acknowledge received purchase lines, a
 As a result, the following features are originated:
 
 \begin{itemize}
-\item List Sale Orders (UCSO001)
-\item List Sale Orders by Customer (UCSO002)
-\item Describe Sale Order (UCSO003)
-\item Create Sale Order (UCSO004)
-\item Edit Sale Order (UCSO005)
-\item Close Sale Order (UCSO006)
-\item Open Sale Order (UCSO007)
-\item Delete Sale Order (UCSO008)
-\item List Sale Lines from Sale Order (UCSO009)
-\item List Sale Lines by Product (UCSO010)
-\item Describe Sale Line (UCSO011)
-\item Create Sale Line (UCSO012)
-\item Edit Sale Line (UCSO013)
-\item Assign Sale Line to Sale Order (UCSO014)
-\item Acknowledge Sale Line (UCSO015)
-\item Delete Sale Line (UCSO016)
+\item \nameref{UCSO001}
+\item \nameref{UCSO002}
+\item \nameref{UCSO003}
+\item \nameref{UCSO004}
+\item \nameref{UCSO005}
+\item \nameref{UCSO006}
+\item \nameref{UCSO007}
+\item \nameref{UCSO008}
+\item \nameref{UCSO009}
+\item \nameref{UCSO010}
+\item \nameref{UCSO011}
+\item \nameref{UCSO012}
+\item \nameref{UCSO013}
+\item \nameref{UCSO014}
+\item \nameref{UCSO015}
+\item \nameref{UCSO016}
 \end{itemize}
 
 Further detail can be found on the annex, where these features are listed in the form of use cases.

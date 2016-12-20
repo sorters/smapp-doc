@@ -1,0 +1,100 @@
+\section{Use cases for Providers}
+
+\subsubsection{UCPP001: List Providers}
+\label{UCPP001}
+
+Actors: System, Client
+
+Preconditions: 
+
+\ucitem None.
+
+Event flow:
+
+\ucitem The Client calls the List Providers endpoint.
+
+\ucitem The System responds with a list of the providers available in the System. If there are no providers in the System, the response is an empty list.
+
+Postconditions: 
+
+\ucitem None.
+
+\subsubsection{UCPP002: Describe Provider}
+\label{UCPP002}
+
+Actors: System, Client
+
+Preconditions: 
+
+\ucitem The provider pid exists.
+
+Event flow:
+
+\ucitem The Client calls the Describe Provider endpoint providing the ID (pid) of the provider.
+
+\ucitem The System responds with the description (its attributes and values) of the provider pid.
+
+Postconditions:
+
+\ucitem None.
+
+\subsubsection{UCPP003: Add Provider}
+\label{UCPP003}
+
+Actors: System, Client
+
+Preconditions: 
+
+\ucitem A provider with the same name attribute does not exist.
+
+Event flow:
+
+\ucitem The Client calls the Add Provider endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
+
+\ucitem The System responds with the ID (pid) of the newly created provider.
+
+Postconditions:
+
+\ucitem The provider described in the adding call exists in the System with the ID pid.
+
+\subsubsection{UCPP004: Modify Provider}
+\label{UCPP004}
+
+Actors: System, Client
+
+Preconditions:
+
+\ucitem The provider pid exists.
+
+\ucitem The name attribute value provided is not used by another provider.
+
+Event flow:
+\ucitem The Client calls the Modify Provider endpoint providing the provider ID (pid) and all the values for the mandatory attributes and optionally the values for the optional 
+ones.
+
+\ucitem The System responds with the ID (pid) of the modified provider.
+
+Postconditions:
+
+\ucitem The attribute values for the provider pid are the ones provided in the modifying call.
+
+\subsubsection{UCPP005: Delete Provider}
+\label{UCPP005}
+
+Actors: System, Client
+
+Preconditions:
+
+\ucitem The provider pid exists.
+
+\ucitem There are no pending orders placed for the provider pid.
+
+Event flow:
+
+\ucitem The Client calls the Delete Provider endpoint providing the ID (pid) of the provider to delete.
+
+\ucitem The System responds with no errors.
+
+Postconditions:
+
+\ucitem The provider pid has been deleted and no longer exists in the system.
