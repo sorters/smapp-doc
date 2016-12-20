@@ -1,6 +1,6 @@
-.tex.aux
-.aux
-.log
-.out
-.toc
+*.tex.aux
+*.aux
+*.log
+*.out
+*.toc
 
