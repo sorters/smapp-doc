@@ -326,6 +326,10 @@ Some code, basically the preparation of the data for the test, that is the \code
 
 Once the tests are written, they can be run with the following command:
 
+\begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
+composer exec codecept run api
+\end{minted}
+
 Assuming the production code necessary to pass the test is correct, and the test passes, Codeception will display something similar to this:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
@@ -364,7 +368,7 @@ FAILURES!
 Tests: 18, Assertions: 60, Failures: 1.
 \end{minted}
 
-The test result shows that there is a format inconsistency between the response of the API and the expected results, as well as detailing the step in which the inconsistency has been detected.
+The test result shows that there is a format inconsistency between the response of the API and the expected results, as well as detailing the step in which the inconsistency has been detected (see lines 9 and 13).
 
 The next step in the development, therefore, would be to fix this explicit bug. Once all the tests are passed, one of the options is to create a new test for a production feature. After writing the test, the whole test suite should be run again, and the new test should fail. This means the test is testing something that’s new to the current implementation and therefore adds value. If the new tests doesn’t fail it can mean that either the test is no well written, or that the feature the test checks is already implemented, and therefore the new test is redundant.
 
