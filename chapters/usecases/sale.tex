@@ -1,287 +1,319 @@
 \section{Use cases for Sales}
 
-\subsubsection{UCSO001: List Sale Orders}
+\begin{ucbox}{UCSO001: List Sale Orders}
 \label{UCSO001}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Sale Orders.
 
 \ucitem The System responds with a list of the sale orders recorded in the System. If there are no sale orders in the System, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO002: List Sale Orders by Customer}
+\end{ucbox}
+
+\begin{ucbox}{UCSO002: List Sale Orders by Customer}
 \label{UCSO002}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The customer cid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Sale Orders by Customer providing the ID (cid) of the customer whose orders have to be listed.
 \ucitem The System responds with a list of the sale orders recorded in the System for the customer cid. If there are no sale orders in the System for the customer cid, the 
 response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO003: Describe Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO003: Describe Sale Order}
 \label{UCSO003}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Sale Order endpoint providing the ID (soid) of the sale order.
 
 \ucitem The System responds with the description (its attributes and values) of the sale order soid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO004: Create Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO004: Create Sale Order}
 \label{UCSO004}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The customer cid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Create Sale Order endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (soid) of the newly created sale order.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale order described in the adding call exists in the System with the ID soid.
 
-\subsubsection{UCSO005: Edit Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO005: Edit Sale Order}
 \label{UCSO005}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists.
 
 \ucitem The customer cid exists (if modified).
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Edit Sale Order endpoint providing the sale order ID (soid) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
 \ucitem The System responds with the ID (soid) of the modified sale order.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the sale order soid are the ones provided in the modifying call.
 
-\subsubsection{UCSO006: Close Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO006: Close Sale Order}
 \label{UCSO006}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists and its state is open.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Close Sale Order endpoint providing the sale order ID (soid).
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale order soid’s state is closed.
 
-\subsubsection{UCSO007: Open Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO007: Open Sale Order}
 \label{UCSO007}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists and its state is closed.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Open Sale Order endpoint providing the sale order ID (soid).
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale order soid’s state is open.
 
-\subsubsection{UCSO008: Delete Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO008: Delete Sale Order}
 \label{UCSO008}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists and its state is closed.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Sale Order endpoint providing the ID (soid) of the sale order to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale order soid has been deleted and no longer exists in the system.
 
-\subsubsection{UCSO009: List Sale Lines from Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO009: List Sale Lines from Sale Order}
 \label{UCSO009}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Sale Lines from Sale Order providing the ID (soid) of the sale order which lines have to be listed.
 
 \ucitem The System responds with a list of the sale lines belonging to the sale order soid. If the sale order has no lines, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO010: List Sale Lines by Product}
+\end{ucbox}
+
+\begin{ucbox}{UCSO010: List Sale Lines by Product}
 \label{UCSO010}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Sale Lines by Product providing the ID (pid) of the product from which to list Sale Lines.
 
 \ucitem The System responds with a list of all the Sale Lines for the product pid. If the product has no sales, the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO011: Describe Sale Line}
+\end{ucbox}
+
+\begin{ucbox}{UCSO011: Describe Sale Line}
 \label{UCSO011}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale line slid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Sale Line endpoint providing the ID (slid) of the sale line.
 
 \ucitem The System responds with the description (its attributes and values) of the purchase line plid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCSO012: Create Sale Line}
+\end{ucbox}
+
+\begin{ucbox}{UCSO012: Create Sale Line}
 \label{UCSO012}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order poid exists (if assigned).
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Create Sale Line endpoint providing the ID (pid) of the product to purchase and optionally the ID (soid) of the sale order the line has to be 
 assigned to.
 
 \ucitem The System responds with the ID (slid) of the newly created sale line.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale line described in the adding call exists in the System with the ID slid.
 
-\subsubsection{UCSO013: Edit Sale Line}
+\end{ucbox}
+
+\begin{ucbox}{UCSO013: Edit Sale Line}
 \label{UCSO013}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale line plid exists.
 
 \ucitem The product pid exists (if modified).
 
-The sale order soid exists (if assigned/modified).
+\ucitem The sale order soid exists (if assigned/modified).
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Edit Sale Line endpoint providing the sale line ID (slid) and all the values for the mandatory attributes and optionally the values for the optional 
 ones.
 
 \ucitem The System responds with the ID (slid) of the modified sale line.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the sale line slid are the ones provided in the modifying call.
 
-\subsubsection{UCSO014: Assign Sale Line to Sale Order}
+\end{ucbox}
+
+\begin{ucbox}{UCSO014: Assign Sale Line to Sale Order}
 \label{UCSO014}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale order soid exists and its state is open.
 
 \ucitem The sale line slid exists.
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Assign Sale Line to Sale Order endpoint providing the sale order ID (soid) to which the line has to be assigned and the sale line ID (slid) of the 
 line to be assigned.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale line slid is assigned to the sale order soid.
 
-\subsubsection{UCSO015: Acknowledge Sale Line}
+\end{ucbox}
+
+\begin{ucbox}{UCSO015: Acknowledge Sale Line}
 \label{UCSO015}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale line slid exists and is for a quantity q.
 
@@ -289,33 +321,38 @@ Preconditions:
 
 \ucitem The quantity q is less or equal to the stock of product pid.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Acknowledge Sale Line endpoint providing the ID (plid) of the sale line to acknowledge.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase line plid state is ‘acknowledged’.
 
 \ucitem The stock of the product pid has decreased by q.
 
-\subsubsection{UCSO016: Delete Sale Line}
+\end{ucbox}
+
+\begin{ucbox}{UCSO016: Delete Sale Line}
 \label{UCSO016}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The sale line slid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Sale Line endpoint providing the ID (slid) of the sale line to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The sale line slid has been deleted and no longer exists in the system.
+
+\end{ucbox}
+\newpage

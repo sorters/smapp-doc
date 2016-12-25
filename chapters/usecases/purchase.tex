@@ -1,220 +1,243 @@
 \section{Use cases for Purchases}
 
-\subsubsection{UCPO001: List Purchase Orders}
+\begin{ucbox}{UCPO001: List Purchase Orders}
 \label{UCPO001}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Purchase Orders.
 
 \ucitem The System responds with a list of the purchase orders recorded in the System. If there are no purchase orders in the System, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO002: Describe Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO002: Describe Purchase Order}
 \label{UCPO002}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:} 
 
 \ucitem The purchase order poid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Purchase Order endpoint providing the ID (poid) of the purchase order.
 
 \ucitem The System responds with the description (its attributes and values) of the purchase order poid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO003: Create Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO003: Create Purchase Order}
 \label{UCPO003}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Create Purchase Order endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (poid) of the newly created purchase order.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase order described in the adding call exists in the System with the ID poid.
 
-\subsubsection{UCPO004: Edit Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO004: Edit Purchase Order}
 \label{UCPO004}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists.
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Edit Purchase Order endpoint providing the purchase order ID (poid) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
 \ucitem The System responds with the ID (poid) of the modified purchase order.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the purchase order poid are the ones provided in the modifying call.
 
-\subsubsection{UCPO005: Close Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO005: Close Purchase Order}
 \label{UCPO005}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists and its state is open.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Close Purchase Order endpoint providing the purchase order ID (poid).
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase order poid’s state is closed.
 
-\subsubsection{UCPO006: Open Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO006: Open Purchase Order}
 \label{UCPO006}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists and its state is closed.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Open Purchase Order endpoint providing the purchase order ID (poid).
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase order poid’s state is open.
 
-\subsubsection{UCPO007: Delete Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO007: Delete Purchase Order}
 \label{UCPO007}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists and its state is closed.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Purchase Order endpoint providing the ID (poid) of the purchase order to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase order poid has been deleted and no longer exists in the system.
 
-\subsubsection{UCPO008: List Purchase Lines from Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO008: List Purchase Lines from Purchase Order}
 \label{UCPO008}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Purchase Order Lines providing the ID (poid) of the purchase order which lines have to be listed.
 
 \ucitem The System responds with a list of the purchase lines belonging to the purchase order poid. If the purchase order has no lines, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO009: List Purchase Lines by Product}
+\end{ucbox}
+
+\begin{ucbox}{UCPO009: List Purchase Lines by Product}
 \label{UCPO009}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Purchase Lines by Product providing the ID (pid) of the product from which to list Purchase Lines.
 
 \ucitem The System responds with a list of all the Purchase Lines for the product pid. If the product has no purchases, the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO010: List Purchase Lines by Provider}
+\end{ucbox}
+
+\begin{ucbox}{UCPO010: List Purchase Lines by Provider}
 \label{UCPO010}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The provider prid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Purchase Lines by Provider providing the ID (prid) of the provider from which to list Purchase Lines.
 
 \ucitem The System responds with a list of all the Purchase Lines for the provider prid. If the provider has no lines, the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO011: Describe Purchase Line}
+\end{ucbox}
+
+\begin{ucbox}{UCPO011: Describe Purchase Line}
 \label{UCPO011}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase line plid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Purchase Line endpoint providing the ID (plid) of the purchase line.
 
 \ucitem The System responds with the description (its attributes and values) of the purchase line plid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCPO012: Create Purchase Line}
+\end{ucbox}
+
+\begin{ucbox}{UCPO012: Create Purchase Line}
 \label{UCPO012}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists (if assigned).
 
@@ -222,22 +245,25 @@ Preconditions:
 
 \ucitem The provider prid exists.
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Create Purchase Line endpoint providing the ID (pid) of the product to purchase and optionally the ID (poid) of the purchase order the line has to be 
 assigned to.
 
 \ucitem The System responds with the ID (plid) of the newly created purchase line.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase line described in the adding call exists in the System with the ID plid.
 
-\subsubsection{UCPO013: Edit Purchase Line}
+\end{ucbox}
+
+\begin{ucbox}{UCPO013: Edit Purchase Line}
 \label{UCPO013}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase line plid exists.
 
@@ -247,75 +273,86 @@ Preconditions:
 
 \ucitem The provider prid exists (if modified).
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Edit Purchase Line endpoint providing the purchase line ID (plid) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
 \ucitem The System responds with the ID (plid) of the modified purchase line.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the purchase line plid are the ones provided in the modifying call.
 
-\subsubsection{UCPO014: Assign Purchase Line to Purchase Order}
+\end{ucbox}
+
+\begin{ucbox}{UCPO014: Assign Purchase Line to Purchase Order}
 \label{UCPO014}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase order poid exists and its state is open.
 
 \ucitem The purchase line plid exists.
 
-Event flow:
+\textbf{Event flow:}
+
 \ucitem The Client calls the Assign Purchase Line to Purchase Order endpoint providing the purchase order ID (poid) to which the line has to be assigned and the purchase line ID (
 plid) of the line to be assigned.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase line plid is assigned to the purchase order poid.
 
-\subsubsection{UCPO015: Acknowledge Purchase Line}
+\end{ucbox}
+
+\begin{ucbox}{UCPO015: Acknowledge Purchase Line}
 \label{UCPO015}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase line plid exists and is for a quantity q.
 
 \ucitem The product pid exists. 
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Acknowledge Purchase Line endpoint providing the ID (plid) of the purchase line to acknowledge.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase line plid state is ‘acknowledged’.
 
 \ucitem The stock of the product pid has increased by q.
 
-\subsubsection{UCPO016: Delete Purchase Line}
+\end{ucbox}
+
+\begin{ucbox}{UCPO016: Delete Purchase Line}
 \label{UCPO016}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The purchase line plid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Purchase Line endpoint providing the ID (plid) of the purchase line to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The purchase line plid has been deleted and no longer exists in the system.
+
+\end{ucbox}
+\newpage

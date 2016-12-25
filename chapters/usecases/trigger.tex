@@ -1,22 +1,155 @@
 \section{Use cases for Triggers}
 
-\subsubsection{UCTR001: List Triggers}
+\begin{ucbox}{UCTR001: List Triggers}
 \label{UCTR001}
 
-\subsubsection{UCTR002: Describe Triggers}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem None.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the List Triggers endpoint.
+
+\ucitem The System responds with the list of the triggers available in the System. If there are no triggers, the response is an empty list.
+
+\textbf{Postconditions:}
+
+\ucitem None.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR002: Describe Trigger}
 \label{UCTR002}
 
-\subsubsection{UCTR003: Add Trigger}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The trigger tid exists.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Describe Trigger endpoint providing the ID (tid) of the trigger.
+
+\ucitem The System responds with the description (its attributes and values) of the trigger tid.
+
+\textbf{Postconditions:}
+
+\ucitem None.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR003: Add Trigger}
 \label{UCTR003}
 
-\subsubsection{UCTR004: Modify Trigger}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The product pid exists and there is no existing trigger for the product pid.
+
+\ucitem The product offer poid exists and there is no existing trigger that uses the product offer poid.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Add Trigger endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
+
+\ucitem The System responds with the ID (tid) of the newly created trigger.
+
+\textbf{Postconditions:}
+
+\ucitem The trigger described in the adding call exists in the System with the ID pid and is enabled.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR004: Modify Trigger}
 \label{UCTR004}
 
-\subsubsection{UCTR005: Enable Trigger}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The trigger tid exists.
+
+\ucitem The product pid exists (if modified).
+
+\ucitem The product offer poid exists (if modified).
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Modify Trigger endpoint providing the trigger ID (tid) and all the values for the mandatory attributes and optionally the values for the optional ones.
+
+\ucitem The System responds with the ID (tid) of the modified provider.
+
+\textbf{Postconditions:}
+
+\ucitem The attribute values for the trigger tid are the ones provided in the modifying call.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR005: Enable Trigger}
 \label{UCTR005}
 
-\subsubsection{UCTR006: Disable Trigger}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The trigger tid exists.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Enable Trigger endpoint providing the ID (tid) of the trigger to enable.
+
+\ucitem The System responds with no errors.
+
+\textbf{Postconditions:}
+
+\ucitem The trigger tid is enabled.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR006: Disable Trigger}
 \label{UCTR006}
 
-\subsubsection{UCTR007: Delete Trigger}
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The trigger tid exists.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Disable Trigger endpoint providing the ID (tid) of the trigger to disable.
+
+\ucitem The System responds with no errors.
+
+\textbf{Postconditions:}
+
+\ucitem The trigger tid is disabled.
+
+\end{ucbox}
+
+\begin{ucbox}{UCTR007: Delete Trigger}
 \label{UCTR007}
+
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The trigger tid exists
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the Delete Trigger endpoint providing the ID (tid) of the trigger to delete.
+
+\ucitem The System responds with no errors.
+
+\textbf{Postconditions:}
+
+\ucitem The trigger tid has been deleted and no longer exists in the system.
+
+\end{ucbox}
+\newpage

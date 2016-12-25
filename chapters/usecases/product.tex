@@ -1,98 +1,109 @@
 \section{Use cases for Product}
 
-\subsubsection{UCP001: List Products}
+\begin{ucbox}{UCP001: List Products}
 \label{UCP001}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Products endpoint.
 
 \ucitem The System responds with a list of the products available in the System. If there are no products in the System, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCP002: Describe Product}
+\end{ucbox}
+
+\begin{ucbox}{UCP002: Describe Product}
 \label{UCP002}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:} 
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Product endpoint providing the ID (pid) of the product.
 
 \ucitem The System responds with the description (its attributes and values) of the product pid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCP003: Add Product}
+\end{ucbox}
+
+\begin{ucbox}{UCP003: Add Product}
 \label{UCP003}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:} 
 
 \ucitem A product with the same name attribute does not exist.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Add Product endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (pid) of the newly created product.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The product described in the adding call exists in the System with the ID pid.
 
-\subsubsection{UCP004: Modify Product}
+\end{ucbox}
+
+\begin{ucbox}{UCP004: Modify Product}
 \label{UCP004}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
 \ucitem The name attribute value provided is not used by another product.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Modify Product endpoint providing the product ID (pid) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (pid) of the modified product.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the product pid are the ones provided in the modifying call.
 
-\subsubsection{UCP005: Delete Product}
+\end{ucbox}
+
+\begin{ucbox}{UCP005: Delete Product}
 \label{UCP005}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Product endpoint providing the product ID (pid) of the product to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The product pid has been deleted and no longer exists in the system.
+
+\end{ucbox}
+\newpage

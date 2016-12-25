@@ -1,138 +1,153 @@
 \section{Use cases for Categories}
 
-\subsubsection{UCC001: List Categories}
+\begin{ucbox}{UCC001: List Categories}
 \label{UCC001}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Categories endpoint.
 
 \ucitem The System responds with a list of the categories available in the System. If there are no categories in the System, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCC002: Describe Category}
+\end{ucbox}
+
+\begin{ucbox}{UCC002: Describe Category}
 \label{UCC002}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The category cid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Describe Category endpoint providing the ID (cid) of the category.
 
 \ucitem The System responds with the description (its attributes and values) of the category cid.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCC003: Add Category}
+\end{ucbox}
+
+\begin{ucbox}{UCC003: Add Category}
 \label{UCC003}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem A category with the same name attribute does not exist.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Add Category endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (cid) of the newly created category.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The category described in the adding call exists in the System with the ID cid.
 
-\subsubsection{UCC004: Modify Category}
+\end{ucbox}
+
+\begin{ucbox}{UCC004: Modify Category}
 \label{UCC004}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The category cid exists.
 
 \ucitem The name attribute value provided is not used by another category.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Modify Category endpoint providing the category ID (cid) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
 \ucitem The System responds with the ID (cid) of the modified category.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The attribute values for the category cid are the ones provided in the modifying call.
 
-\subsubsection{UCC005: Delete Category}
+\end{ucbox}
+
+\begin{ucbox}{UCC005: Delete Category}
 \label{UCC005}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The category cid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Delete Category endpoint providing the ID (cid) of the category to delete.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The category cid has been deleted and no longer exists in the system.
 
-\subsubsection{UCC006: List Products of Category}
+\end{ucbox}
+
+\begin{ucbox}{UCC006: List Products of Category}
 \label{UCC006}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The category cid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Products of Category endpoint providing the ID (cid) of the category of which the products have to be listed.
 
 \ucitem The Systems responds with a list of the products that belong to the category cid. If no products belong to the category cid the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCC007: Assign Category to Product}
+\end{ucbox}
+
+\begin{ucbox}{UCC007: Assign Category to Product}
 \label{UCC007}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The category cid exists.
 
 \ucitem The product pids exist.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Assign Category to Product endpoint providing the ID (cid) of the category and the ID’s of the products for the category.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The products in the list of pids belong to the category cid.
+
+\end{ucbox}
+\newpage

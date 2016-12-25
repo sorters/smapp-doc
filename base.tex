@@ -6,10 +6,25 @@
 \usepackage{minted}
 \usepackage{xcolor}
 \usepackage{graphicx}
-\usepackage[utf8]{inputenc}
-\usepackage{amsfonts}
-\usepackage{newunicodechar}
 \usepackage{etoolbox}
+\usepackage{framed}
+\usepackage{tcolorbox}
+
+\newtcolorbox{ucbox}[2][]
+{
+    top=-9pt,
+    bottom=0mm,
+    left=0mm,
+    right=0mm,
+    colframe = gray!35,
+    colback  = gray!15,
+    coltitle = gray!30!black,
+    title = #2,
+    fonttitle=\bfseries,
+    parbox=false,
+    boxsep=9pt,
+    #1
+}
 
 \graphicspath{ {images/} }
 

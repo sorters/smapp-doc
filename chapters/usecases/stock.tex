@@ -1,89 +1,97 @@
 \section{Use cases for Stock}
 
-\subsubsection{UCS001: List all Stocks}
+\begin{ucbox}{UCS001: List all Stocks}
 \label{UCS001}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem None.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List all Stocks endpoint.
 
 \ucitem The System responds with a list of the stocks available in the System. If there are no stocks in the System, the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCS002: View Product Stocks}
+\end{ucbox}
+
+\begin{ucbox}{UCS002: View Product Stocks}
 \label{UCS002}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the View Product Stock endpoint providing the product ID (pid).
 
 \ucitem The System responds with the list of stocks of the product pid. If the product pid has no stocks, the response is an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCS003: Get Product Stock}
+\end{ucbox}
+
+\begin{ucbox}{UCS003: Get Product Stock}
 \label{UCS003}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Get Product Stock endpoint providing the product ID (pid).
 
 \ucitem The System responds with the current stock of the product pid. If the product pid has no stock, the response is 0.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCS004: Add to Product Stock}
+\end{ucbox}
+
+\begin{ucbox}{UCS004: Add to Product Stock}
 \label{UCS004}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
 \ucitem There are n items of product pid in stock, where 0 =< n. 
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Add to Product Stock endpoint providing the product ID (pid) and the quantity q to add to the current stock.
 
 \ucitem The System responds with the current stock quantity for the product after the adding.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The current stock of the product is n + q.
 
-\subsubsection{UCS005: Remove from Product Stock}
+\end{ucbox}
+
+\begin{ucbox}{UCS005: Remove from Product Stock}
 \label{UCS005}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
@@ -91,14 +99,15 @@ Preconditions:
 
 \ucitem The quantity to remove is q, where q =< n.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Remove from Product Stock endpoint providing the product ID (pid) and the quantity q to remove from the current stock.
 
 \ucitem The System responds with the current stock quantity for the product after the removing.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The current stock of the product is n - q.
 
-
+\end{ucbox}
+\newpage

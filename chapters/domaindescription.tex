@@ -1,15 +1,20 @@
 This section follows as the next step in the evolution from the conceptual domain explored in the feature analysis section and provides a lower level technical description of the classes and general architecture originated from it. Although this is actually a technical specification in itself, the section intends to provide an insight of the steps from the conceptual level to the technical one, showing how the latter is directly derived from the former.
 
 \section{Overall structure}
-The following diagram shows the overall structure of the application’s domain layer:
+The following diagram (Figure \ref{fig:smappclasses}) shows the overall structure of the application’s domain layer.
 
-\includegraphics[width=\textwidth]{smappclasses.png}
-
-The Product is the center of sorts of the diagram as it is what, at a conceptual level, glues everything together. A Product can be classified under a Category, and can also be tagged with Tags.
+The Product is the center of sorts of the diagram, as it is what, at a conceptual level, glues everything together. A Product can be classified under a Category, and can also be tagged with Tags.
 
 A Product can be offered by a Provider, which generates a ProductOffer. A Product can be purchased from a Provider with a PurchaseLine, which is basically the representation of submitting an order for the Product to the Provider. PurchaseLines are grouped and managed under a PurchaseOrder. Once a Product has been purchased, received and acknowledged, it produces a Stock, which is the actual and real representation of having goods in storage.
 
 Once a Stock exists, the Product can be sold. Products can be sold with SaleLines, which represent an order from a Customer for the Product. SaleLines submitted by the same Customer at the same time are grouped under a SaleOrder, which represents the whole transaction.
+
+\begin{figure}
+	\centering
+		\includegraphics[width=\textwidth]{smappclasses.png}
+	\caption{Domain diagram}
+	\label{fig:smappclasses}
+\end{figure}
 
 \section{Classes}
 Following is a more in-detail explanation of each specific class, with its attributes and interactions. All the classes have implicit attributes that will not be listed individually, as they do not add conceptual value. These attributes, present in all the classes with no exception are the following:
@@ -69,7 +74,7 @@ A Stock represents existence of a number of items of a product that are in stora
 \begin{center}
 \includegraphics[scale=0.5]{stock.png}
 \end{center}
-A stock obviously references a product and works with two attributes:
+A stock references a product and works with two attributes:
 
 \begin{itemize}
 \item units: The amount of items or units of the product it references.
@@ -81,6 +86,27 @@ As well as the product, the stock references the provider from which the product
 It also (optionally, although it is expected to be like this most of the time) references the purchase line from which it was originated. This is really useful for tracking purposes, as it allows to have a very concise registry of the chain the product has followed.
 
 This class has one of the exceptions regarding the created\_on attribute. This is taken into account as the stocks are processed on a FIFO basis, based on its creation date.
+
+\subsection{Trigger}
+A Trigger represents an action to be taken when a condition is met. In this case, a triggeris used to create a purchase order for a product when the stock has reached a certain low level.
+
+\begin{center}
+\includegraphics[scale=0.5]{trigger.png}
+\end{center}
+A trigger references a product and a product offer and has four attributes:
+
+\begin{itemize}
+\item threshold: The minimum amount of units of the product, below which the action will be triggered.
+\item offset: The number of units of the product that must be purchased beyond the threshold.
+\item fill: If the threshold has to be met as a result of the action (purchase).
+\item enabled: If the trigger is enabled.
+\end{itemize}
+
+If the fill attribute is set to true, the purchase order will be for at least as many units of the product that are needed to meet the threshold. If the offset attribute is greater than zero, the purchase order will be for as many units as needed to fill, plus as many units as specified on the offset. If the offset is zero, no extra units of product will be purchased beyond the fill units.
+
+However, if the offset is greater than zero but the fill attribute is set to false, the purchase order will be for as many units as specified on the offset, regardless if the threshold is met or not.
+
+The trigger only checks and triggers according to the threshold if it is enabled.
 
 \subsection{Provider}
 This class represents a provider of products, and entity from which the user can purchase products. 

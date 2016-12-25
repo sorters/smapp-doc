@@ -1,79 +1,88 @@
 \section{Use cases for Tags}
 
-\subsubsection{UCT001: Assign Tag to Product}
+\begin{ucbox}{UCT001: Assign Tag to Product}
 \label{UCT001}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Assign Tag to Product endpoint providing the ID (pid) of the product which to assign the tag and the name of the tag to assign.
 
 \ucitem The System responds with the ID (tid) of the tag.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem The product pid has the tag tid assigned to it.
 
-\subsubsection{UCT002: Remove Tag from Product}
+\end{ucbox}
+
+\begin{ucbox}{UCT002: Remove Tag from Product}
 \label{UCT002}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
 \ucitem The tag tid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Remove Tag from Product endpoint providing the ID (pid) of the product and the ID (tid) of the tag to remove.
 
 \ucitem The System responds with no errors.
 
-Postconditions:
+\textbf{Postconditions:}
 
-The product pid has no longer the tag tid assigned to it.
+\ucitem The product pid has no longer the tag tid assigned to it.
 
-\subsubsection{UCT003: Get Products by Tag}
+\end{ucbox}
+
+\begin{ucbox}{UCT003: Get Products by Tag}
 \label{UCT003}
 
 Actors: System, Client
 
-Preconditions:
+\textbf{Preconditions:}
 
 \ucitem The tag tid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the Get Products by Tag endpoint providing the ID (tid) of the tag.
 
 \ucitem The System responds with a list of all the products that have the tag assigned. If no products have the tag assigned, the System responds with an empty list.
 
-Postconditions:
+\textbf{Postconditions:}
 
 \ucitem None.
 
-\subsubsection{UCT004: List Product Tags}
+\end{ucbox}
+
+\begin{ucbox}{UCT004: List Product Tags}
 \label{UCT004}
 
 Actors: System, Client
 
-Preconditions: 
+\textbf{Preconditions:}
 
 \ucitem The product pid exists.
 
-Event flow:
+\textbf{Event flow:}
 
 \ucitem The Client calls the List Product Tags endpoint.
 
 \ucitem The System responds with a list of the tags assigned to the product pid. If the product pid has no tags assigned, the response is an empty list.
 
-Postconditions: 
+\textbf{Postconditions:}
 
 \ucitem None.
+
+\end{ucbox}
+\newpage
