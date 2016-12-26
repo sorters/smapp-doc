@@ -9,20 +9,23 @@
 \usepackage{etoolbox}
 \usepackage{framed}
 \usepackage{tcolorbox}
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
 
 \newtcolorbox{ucbox}[2][]
 {
-    top=-9pt,
-    bottom=0mm,
-    left=0mm,
-    right=0mm,
+    top = -9pt,
+    bottom = 0mm,
+    left = 0mm,
+    right = 0mm,
     colframe = gray!35,
     colback  = gray!15,
     coltitle = gray!30!black,
     title = #2,
-    fonttitle=\bfseries,
-    parbox=false,
-    boxsep=9pt,
+    fonttitle = \bfseries,
+    parbox = false,
+    boxsep = 9pt,
+    toptitle = -11pt,
     #1
 }
 
@@ -38,11 +41,18 @@
   \ignorespaces
 }
 
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[scale=0.3]{upclogo}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+
 \begin{document}
 
-
-    \title{Stock Management Application (SMAPP)}
-    \author{Robert Escuain Poole\\Universitat Politècnica de Catalunya\\Director: Lluís Pérez Vidal}
+    \title{\bfseries Stock Management Application (SMAPP)}
+    \author{Robert Escuain Poole\\[\bigskipamount]Universitat Politècnica de Catalunya\\Director: Lluís Pérez Vidal}
     \date{\today}
     \maketitle
 

@@ -1,4 +1,4 @@
-From the areas described in section 4, the Scope of this project, a series of features can be defined, alongside their use cases. Being that the final product of this project is an API, the only actors here involved will be the Client and the System. The Client interacts with the System by doing calls to a series of endpoints that are provided by the API as an interface to the business logic of the solution. Also, for all use cases, the precondition of the Client being authenticated (logged in) in the System is assumed and will not be explicitly listed.
+From the areas described in Chapter 4: Scope of this project, a series of features can be defined, alongside their use cases. Being that the final product of this project is an API, the only actors here involved will be the Client and the System. The Client interacts with the System by doing calls to a series of endpoints that are provided by the API as an interface to the business logic of the solution. Also, for all use cases, the precondition of the Client being authenticated (logged in) in the System is assumed and will not be explicitly listed.
 
 The use cases here described provide an abstraction of the business logic and are agnostic to the actual implementation. Therefore the names used for the endpoints of the API or different features of the system may not coincide with the actual implementation. For the technically accurate documentation of the System please refer to the Technical Documentation of the API, which will be exposed as part of the implementation.
 
@@ -14,11 +14,11 @@ The most essential use cases when managing products are related to knowing what 
 The resulting features for products, in the form of use cases, which are described in detail in the annex, are the following:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCP001}
-\item \nameref{UCP002}
-\item \nameref{UCP003}
-\item \nameref{UCP004}
-\item \nameref{UCP005}
+\item \hyperref[UCP001]{UCP001: List Products}
+\item \hyperref[UCP002]{UCP002: Describe Product}
+\item \hyperref[UCP003]{UCP003: Add Product}
+\item \hyperref[UCP004]{UCP004: Modify Product}
+\item \hyperref[UCP005]{UCP005: Delete Product}
 \end{itemize}
 \hfill\break
 Regarding stocks, it is also required to be able to list them all, in order to provide hindsight of the bigger picture, if needed. A more critical feature, however, is to be able to view the existing stocks of a specific product. For this purpose, as described earlier, stocks are considered independent quantities of a product. In this particular case this is designed in this way to provide awareness on a practical level. Different stocks will represent, for instance, different batches of a product, usually bought and received at different moments in time.
@@ -30,11 +30,11 @@ Additionally, stocks should be increasable and decreasable. Stock increases are 
 The resulting features regarding stocks, in the form of use cases, and detailed also in the annex, are as follow:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCS001}
-\item \nameref{UCS002}
-\item \nameref{UCS003}
-\item \nameref{UCS004}
-\item \nameref{UCS005}
+\item \hyperref[UCS001]{UCS001: List all Stocks}
+\item \hyperref[UCS002]{UCS002: View Product Stocks}
+\item \hyperref[UCS003]{UCS003: Get Product Stock}
+\item \hyperref[UCS004]{UCS004: Add to Product Stock}
+\item \hyperref[UCS005]{UCS005: Remove from Product Stock}
 \end{itemize}
 \hfill\break
 Indirectly, the features described in this section provide indirect support for purchases and sales via the increase or decrease of the product stock. Although further support for this kind of transactions may be implemented natively in the solution, exposing this step will allow potential contributors to integrate different logics for purchases and sales, in conjunction with the logic that supports providers and customers, described later in its section.
@@ -53,13 +53,13 @@ This implies some features that allow knowing about this relationship. From one 
 The features for categories, in the form of use cases, are described in more detail in the annex and are as follow:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCC001}
-\item \nameref{UCC002}
-\item \nameref{UCC003}
-\item \nameref{UCC004}
-\item \nameref{UCC005}
-\item \nameref{UCC006}
-\item \nameref{UCC007}
+\item \hyperref[UCC001]{UCC001: List Categories}
+\item \hyperref[UCC002]{UCC002: Describe Category}
+\item \hyperref[UCC003]{UCC003: Add Category}
+\item \hyperref[UCC004]{UCC004: Modify Category}
+\item \hyperref[UCC005]{UCC005: Delete Category}
+\item \hyperref[UCC006]{UCC006: List Products of Category}
+\item \hyperref[UCC007]{UCC007: Assign Category to Product}
 \end{itemize}
 \hfill\break
 In a similar way to categories, a product can have multiple tags assigned. Tags will represent an abstraction of a particular trait (temporary or not) that can be shared by multiple products across different categories. A specific scenario that showcases the use of tags could be a marketing campaign that affects a certain number of products. In order to easily identify these products, they can be assigned the tag related to the campaign while it lasts.
@@ -73,10 +73,10 @@ As with the categories, features have to enable to see the relationships between
 These requirements imply the following features:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCT001}
-\item \nameref{UCT002}
-\item \nameref{UCT003}
-\item \nameref{UCT004}
+\item \hyperref[UCT001]{UCT001: Assign Tag to Product}
+\item \hyperref[UCT002]{UCT002: Remove tag from Product}
+\item \hyperref[UCT003]{UCT003: Get Products by Tag}
+\item \hyperref[UCT004]{UCT004: List Product Tags}
 \end{itemize}
 \hfill\break
 Further detail can be found in the annex, where this features are described in the form of use cases.
@@ -96,13 +96,13 @@ Configuring a trigger means specifying a threshold, or the minimum stock below w
 The resulting features, which are further detailed in the annex in the form of use cases, are as follow:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCTR001}
-\item \nameref{UCTR002}
-\item \nameref{UCTR003}
-\item \nameref{UCTR004}
-\item \nameref{UCTR005}
-\item \nameref{UCTR006}
-\item \nameref{UCTR007}
+\item \hyperref[UCTR001]{UCTR001: List Triggers}
+\item \hyperref[UCTR002]{UCTR002: Describe Trigger}
+\item \hyperref[UCTR003]{UCTR003: Add Trigger}
+\item \hyperref[UCTR004]{UCTR004: Modify Trigger}
+\item \hyperref[UCTR005]{UCTR005: Enable Trigger}
+\item \hyperref[UCTR006]{UCTR006: Disable Trigger}
+\item \hyperref[UCTR007]{UCTR007: Delete Trigger}
 \end{itemize}
 \hfill\break
 \section{Stock rotation}
@@ -116,11 +116,11 @@ The Provider entity is the most important of both because order placements are a
 The features for managing providers, therefore, are the following:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCPP001}
-\item \nameref{UCPP002}
-\item \nameref{UCPP003}
-\item \nameref{UCPP004}
-\item \nameref{UCPP005}
+\item \hyperref[UCPP001]{UCPP001: List Providers}
+\item \hyperref[UCPP002]{UCPP002: Describe Provider}
+\item \hyperref[UCPP003]{UCPP003: Add Provider}
+\item \hyperref[UCPP004]{UCPP004: Modify Provider}
+\item \hyperref[UCPP005]{UCPP005: Delete Provider}
 \end{itemize}
 \hfill\break
 In a different way, while the Customer entity can be important, it’s not mandatory. It can be used for Customer Relationship Management, or CRM, or in other words to keep track of who the products have been sold to. A full CRUD feature is again needed for this entity.
@@ -128,11 +128,11 @@ In a different way, while the Customer entity can be important, it’s not manda
 The resulting features for customers are the following:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCCU001}
-\item \nameref{UCCU002}
-\item \nameref{UCCU003}
-\item \nameref{UCCU004}
-\item \nameref{UCCU005}
+\item \hyperref[UCCU001]{UCCU001: List Customers}
+\item \hyperref[UCCU002]{UCCU002: Describe Customer}
+\item \hyperref[UCCU003]{UCCU003: Add Customer}
+\item \hyperref[UCCU004]{UCCU004: Modify Customer}
+\item \hyperref[UCCU005]{UCCU005: Delete Customer}
 \end{itemize}
 \hfill\break
 Both sets of features can be found described in more detail, as use cases, in the annex.
@@ -153,22 +153,22 @@ Once purchase lines are ready to be processed (usually this is when the user rec
 Following is a summarized list of features that originate in this section. These features are described in the annex in the form of use cases.
 \hfill\break
 \begin{itemize}
-\item \nameref{UCPO001}
-\item \nameref{UCPO002}
-\item \nameref{UCPO003}
-\item \nameref{UCPO004}
-\item \nameref{UCPO005}
-\item \nameref{UCPO006}
-\item \nameref{UCPO007}
-\item \nameref{UCPO008}
-\item \nameref{UCPO009}
-\item \nameref{UCPO010}
-\item \nameref{UCPO011}
-\item \nameref{UCPO012}
-\item \nameref{UCPO013}
-\item \nameref{UCPO014}
-\item \nameref{UCPO015}
-\item \nameref{UCPO016}
+\item \hyperref[UCPO001]{UCPO001: List Purchase Orders}
+\item \hyperref[UCPO002]{UCPO002: Describe Purchase Order}
+\item \hyperref[UCPO003]{UCPO003: Create Pruchase Order}
+\item \hyperref[UCPO004]{UCPO004: Edit Purchase Order}
+\item \hyperref[UCPO005]{UCPO005: Close Purchase Order}
+\item \hyperref[UCPO006]{UCPO006: Open Purchase Order}
+\item \hyperref[UCPO007]{UCPO007: Delete Purchase Order}
+\item \hyperref[UCPO008]{UCPO008: List Purchase Lines from Purchase Order}
+\item \hyperref[UCPO009]{UCPO009: List Purchase Lines by Product}
+\item \hyperref[UCPO010]{UCPO010: List Purchase Lines by Provider}
+\item \hyperref[UCPO011]{UCPO011: Describe Purchase Line}
+\item \hyperref[UCPO012]{UCPO012: Create Purchase Line}
+\item \hyperref[UCPO013]{UCPO013: Edit Purchase Line}
+\item \hyperref[UCPO014]{UCPO014: Assign Purchase Line to Purchase Order}
+\item \hyperref[UCPO015]{UCPO015: Acknowledge Purchase Line}
+\item \hyperref[UCPO016]{UCPO016: Delete Purchase Line}
 \end{itemize}
 \hfill\break
 On the sales side, there will be sales, which include sale lines. A sale can be assigned to a specific customer or not.
@@ -184,22 +184,22 @@ Finally, alike the feature that allows to acknowledge received purchase lines, a
 As a result, the following features are originated:
 \hfill\break
 \begin{itemize}
-\item \nameref{UCSO001}
-\item \nameref{UCSO002}
-\item \nameref{UCSO003}
-\item \nameref{UCSO004}
-\item \nameref{UCSO005}
-\item \nameref{UCSO006}
-\item \nameref{UCSO007}
-\item \nameref{UCSO008}
-\item \nameref{UCSO009}
-\item \nameref{UCSO010}
-\item \nameref{UCSO011}
-\item \nameref{UCSO012}
-\item \nameref{UCSO013}
-\item \nameref{UCSO014}
-\item \nameref{UCSO015}
-\item \nameref{UCSO016}
+\item \hyperref[UCSO001]{UCSO001: List Sale Orders}
+\item \hyperref[UCSO002]{UCSO002: List Sale Orders by Customer}
+\item \hyperref[UCSO003]{UCSO003: Describe Sale Order}
+\item \hyperref[UCSO004]{UCSO004: Create Sale Order}
+\item \hyperref[UCSO005]{UCSO005: Edit Sale Order}
+\item \hyperref[UCSO006]{UCSO006: Close Sale Order}
+\item \hyperref[UCSO007]{UCSO007: Open Sale Order}
+\item \hyperref[UCSO008]{UCSO008: Delete Sale Order}
+\item \hyperref[UCSO009]{UCSO009: List Sale Lines from Sale Order}
+\item \hyperref[UCSO010]{UCSO010: List Sale Lines by Product}
+\item \hyperref[UCSO011]{UCSO011: Describe Sale Line}
+\item \hyperref[UCSO012]{UCSO012: Create Sale Line}
+\item \hyperref[UCSO013]{UCSO013: Edit Sale Line}
+\item \hyperref[UCSO014]{UCSO014: Assign Sale Line to Sale Order}
+\item \hyperref[UCSO015]{UCSO015: Acknowledge Sale Line}
+\item \hyperref[UCSO016]{UCSO016: Delete Sale Line}
 \end{itemize}
 \hfill\break
 Further detail can be found on the annex, where these features are listed in the form of use cases.
