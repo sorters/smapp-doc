@@ -377,9 +377,9 @@ The other option is to refactor the current code in order to optimise it or make
 \section{Deployment}
 One of the requirements of the whole solution is for it to be easy to set up and install. The effort required from the user should be minimal, and therefore the process has to be automated as much as possible.
 
-So far the designed solution is supported to be installed in a machine running a late version of Ubuntu. It is designed so only a couple of manual steps are required, which are very simple and well explained in the \code{readme.md} of the project repository.
+So far the designed solution is supported to be installed in a machine running a late version of Ubuntu. It is designed so only a couple of manual steps are required, which are very simple and are well explained in the \code{readme.md} of the project repository.
 
-The installation process, however, assumes a specific set of requirements are met. These requirements are also listed in the \code{readme.md} and include having Apache 2, PHP (>= 5.6.4), and Composer to begin with. From here, the environment has also to fullfill Laravel's own requirements, which include:
+The installation process, however, assumes a specific set of requirements are met. These requirements are also listed in the \code{readme.md} and include having Apache 2, PHP (\textgreater= 5.6.4), and Composer to begin with. From here, the environment has also to fullfill Laravel's own requirements, which include:
 
 \begin{itemize}
 \item OpenSSL PHP Extension
@@ -389,7 +389,7 @@ The installation process, however, assumes a specific set of requirements are me
 \item XML PHP Extension
 \end{itemize}
 
-Although it is not a mandatory requirement for Laravel, the \code{php5-sqlite} library is needed, as the default application uses SQLite for the database.
+Although it is not a mandatory requirement for Laravel, the \code{php5-sqlite} library is needed, since the default application uses SQLite for the database.
 
 Once these requirements are met, the project has to be cloned in a suitable folder inside \code{/var/www/}. This will create a file named \code{smapp}, which contains the application. Inside the folder, under the \code{installation} folder, there is an installer, \code{install.sh}, and a VHost configuration file, \code{smapp.conf}. The user has to manually modify \code{smapp.conf} according to the instructions inside, basically setting up the domain under which the application will be called, and optionally setting up a custom name for the application. After this is done, the user simply has to run the installer to complete the installation.
 
