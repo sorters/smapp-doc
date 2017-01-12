@@ -245,16 +245,17 @@ Actors: System, Client
 
 \ucitem The provider prid exists.
 
+\ucitem The product offer pofid exists (if referenced).
+
 \textbf{Event flow:}
 
-\ucitem The Client calls the Create Purchase Line endpoint providing the ID (pid) of the product to purchase and optionally the ID (poid) of the purchase order the line has to be 
-assigned to.
+\ucitem The Client calls the Create Purchase Line endpoint providing the ID (pid) of the product to purchase and its unit price, or the ID (pofid) of the product offer of the product to purchase, and optionally the ID (poid) of the purchase order the line has to be assigned to.
 
 \ucitem The System responds with the ID (plid) of the newly created purchase line.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line described in the adding call exists in the System with the ID plid.
+\ucitem The purchase line described in the adding call exists in the System with the ID plid. If a product offer is referenced but a unit price was provided, the unit price provided overrides the one of the product offer.
 
 \end{ucbox}
 

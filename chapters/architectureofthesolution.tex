@@ -24,7 +24,7 @@ Note that this design is for the demo implementation. The system is built so it 
 The backbone of the project, the API that implements the business logic of the solution, is implemented in PHP 5.5.9. The reason for using this language among others are that it is very agile and straightforward. Although many would argue in favour of other technologies for projects of this type, the previous experience with this language from the people involved and the requirements of the project, such as speed and simplicity of development, make it a good choice.
 
 \section{Laravel}
-Laravel is an open source PHP framework created in 2011 by Taylor Otwell as a more advanced and friendly alternative to Codeigniter and other frameworks from the moment. Although in its initial version it did not provide support for controllers, currently it’s a fully MVC (model-view-controller) oriented framework. Its key features start by being friendly, intuitive and clean, making it pretty straightforward to implement basic and simple applications using only features and capabilities provided out-of-the-box by the framework.
+Laravel is an open-source PHP framework created in 2011 by Taylor Otwell as a more advanced and friendly alternative to Codeigniter and other frameworks from the moment. Although in its initial version it did not provide support for controllers, currently it’s a fully MVC (model-view-controller) oriented framework. Its key features start by being friendly, intuitive and clean, making it pretty straightforward to implement basic and simple applications using only features and capabilities provided out-of-the-box by the framework.
 
 That said, Laravel was not the original decision. Instead the intention was to use its lighter sibling, Lumen, a lightweight version of Laravel that includes the very basics. Although using the light version would be a great opportunity for this project, it lacked a key feature that proved very important. At the moment, Lumen did not support routing on subdomains. This was key requisite in the design application, so the decision to trade lightness for this feature, which is supported on the full Laravel framework was direct.
 
@@ -41,7 +41,7 @@ As with most of the frameworks, Laravel also provides the order and advantages o
 Finally, Laravel also comes with a friendly and intuitive templating engine. However this is not something exploited on this project so no further detail besides mention is needed.
 
 \section{Routing}
-One of the most powerful features provided by Laravel is its routing engine. Explained in a simple way, routing consists on assigning the different routes an application has (the addresses used) to their different pages, actions, controllers and so on. These routes are defined in the app/http/routes.php file. For an example, following is the most basic example of a route in Laravel, borrowed directly from the \href{https://laravel.com/docs/5.3/routing}{official Laravel documentation} \cite{9}:
+One of the most powerful features provided by Laravel is its routing engine. Explained in a simple way, routing consists on assigning the different routes an application has (the addresses used) to their different pages, actions, controllers and so on. These routes are defined in the app/http/routes.php file. For an example, following is the most basic example of a route in Laravel, borrowed directly from the \href{https://laravel.com/docs/5.3/routing}{official Laravel documentation} \cite{10}:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 Route::get('foo', function () {
@@ -567,4 +567,4 @@ The only additional variation to Laravel’s native structure has been to expose
 
 The management of the droplet is through SSH from the development computer.
 
-The source code is hosted on GitHub, to easily make it available to the open source community.
+The source code is hosted on GitHub, to easily make it available to the open-source community.
