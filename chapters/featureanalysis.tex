@@ -162,8 +162,18 @@ Both sets of features can be found described in more detail, as use cases, in th
 \section{Sales and purchases}
 This section covers the features that allow the system to manage purchases to providers, and sales, either to specific customers or not. For this, several entities will be used. Although this logic could belong in the Counting and Quantifying section, it is documented separately as it depends on features from several other sections. 
 
-On the purchases side, there will be Purchase Orders, which will include Purchase Lines, each Purchase Line representing a product bought to a provider.
+On the purchases side, there will be Purchase Orders, which will include Purchase Lines, each Purchase Line representing a product bought to a provider. The purchase lines can either reference a Product or a Product Offer.
 
+A Product Offer represents a specific offer made by a provider for a product. Full CRUD support is needed in order to manage Product Offers, so the resulting features, later described in the annex as use cases, are the following:
+\hfill\break
+\begin{itemize}
+\item \hyperref[UCPOF001]{UCPOF001: List Product Offers}
+\item \hyperref[UCPOF002]{UCPOF002: Describe Product Offer}
+\item \hyperref[UCPOF003]{UCPOF003: Add Product Offer}
+\item \hyperref[UCPOF004]{UCPOF004: Modify Product Offer}
+\item \hyperref[UCPOF005]{UCPOF005: Delete Product Offer}
+\end{itemize}
+\hfill\break
 A purchase order is created when the user needs to process purchase lines. A purchase line is created by the user in order to increase the stock of a given product. A line is created specifying the product to be purchased and the provider from which it will be purchased. There are two ways to have a purchase line in an order, either directly adding them as parameters when creating the purchase order (on the POST body, in the case of this project) or creating them separately with a specific feature, and then adding them to an existing order with another specific feature. This can be found explained in the user documentation of the API.
 
 By default, a purchase line will have a state of open, which means that it is pending processing. In a similar way, if an order has open lines, its state will also be open. This implies features to manage the state of both lines and orders. Additionally, a user might need to change lines from an order to another, as well as modifying these orders. Finally, a user has to be able to delete both lines and orders. To delete a line or an order, those have to be in a state of closed.
