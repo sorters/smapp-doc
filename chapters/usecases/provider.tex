@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The provider pid exists.
+\ucitem The provider \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Provider endpoint providing the ID (pid) of the provider.
+\ucitem The Client calls the Describe Provider endpoint providing the ID (\textit{pid}) of the provider.
 
-\ucitem The System responds with the description (its attributes and values) of the provider pid.
+\ucitem The System responds with the description (its attributes and values) of the provider \textit{pid}.
 
 \textbf{Postconditions:}
 
@@ -55,11 +55,11 @@ Actors: System, Client
 
 \ucitem The Client calls the Add Provider endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (pid) of the newly created provider.
+\ucitem The System responds with the ID (\textit{pid}) of the newly created provider.
 
 \textbf{Postconditions:}
 
-\ucitem The provider described in the adding call exists in the System with the ID pid.
+\ucitem The provider described in the adding call exists in the System with the ID \textit{pid}.
 
 \end{ucbox}
 
@@ -70,20 +70,20 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The provider pid exists.
+\ucitem The provider \textit{pid} exists.
 
 \ucitem The name attribute value provided is not used by another provider.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Modify Provider endpoint providing the provider ID (pid) and all the values for the mandatory attributes and optionally the values for the optional 
+\ucitem The Client calls the Modify Provider endpoint providing the provider ID (\textit{pid}) and all the values for the mandatory attributes and optionally the values for the optional 
 ones.
 
-\ucitem The System responds with the ID (pid) of the modified provider.
+\ucitem The System responds with the ID (\textit{pid}) of the modified provider.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the provider pid are the ones provided in the modifying call.
+\ucitem The attribute values for the provider \textit{pid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -94,19 +94,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The provider pid exists.
+\ucitem The provider \textit{pid} exists.
 
-\ucitem There are no pending orders placed for the provider pid.
+\ucitem There are no pending orders placed for the provider \textit{pid}.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Provider endpoint providing the ID (pid) of the provider to delete.
+\ucitem The Client calls the Delete Provider endpoint providing the ID (\textit{pid}) of the provider to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The provider pid has been deleted and no longer exists in the system.
+\ucitem The provider \textit{pid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage

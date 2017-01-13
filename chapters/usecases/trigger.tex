@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The trigger tid exists.
+\ucitem The trigger \textit{tid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Trigger endpoint providing the ID (tid) of the trigger.
+\ucitem The Client calls the Describe Trigger endpoint providing the ID (\textit{tid}) of the trigger.
 
-\ucitem The System responds with the description (its attributes and values) of the trigger tid.
+\ucitem The System responds with the description (its attributes and values) of the trigger \textit{tid}.
 
 \textbf{Postconditions:}
 
@@ -49,19 +49,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists and there is no existing trigger for the product pid.
+\ucitem The product \textit{pid} exists and there is no existing trigger for the product \textit{pid}.
 
-\ucitem The product offer poid exists and there is no existing trigger that uses the product offer poid.
+\ucitem The product offer \textit{poid} exists and there is no existing trigger that uses the product offer \textit{poid}.
 
 \textbf{Event flow:}
 
 \ucitem The Client calls the Add Trigger endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (tid) of the newly created trigger.
+\ucitem The System responds with the ID (\textit{tid}) of the newly created trigger.
 
 \textbf{Postconditions:}
 
-\ucitem The trigger described in the adding call exists in the System with the ID pid and is enabled.
+\ucitem The trigger described in the adding call exists in the System with the ID \textit{pid} and is enabled.
 
 \end{ucbox}
 
@@ -72,21 +72,21 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The trigger tid exists.
+\ucitem The trigger \textit{tid} exists.
 
-\ucitem The product pid exists (if modified).
+\ucitem The product \textit{pid} exists (if modified).
 
-\ucitem The product offer poid exists (if modified).
+\ucitem The product offer \textit{poid} exists (if modified).
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Modify Trigger endpoint providing the trigger ID (tid) and all the values for the mandatory attributes and optionally the values for the optional ones.
+\ucitem The Client calls the Modify Trigger endpoint providing the trigger ID (\textit{tid}) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (tid) of the modified provider.
+\ucitem The System responds with the ID (\textit{tid}) of the modified provider.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the trigger tid are the ones provided in the modifying call.
+\ucitem The attribute values for the trigger \textit{tid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -97,17 +97,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The trigger tid exists.
+\ucitem The trigger \textit{tid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Enable Trigger endpoint providing the ID (tid) of the trigger to enable.
+\ucitem The Client calls the Enable Trigger endpoint providing the ID (\textit{tid}) of the trigger to enable.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The trigger tid is enabled.
+\ucitem The trigger \textit{tid} is enabled.
 
 \end{ucbox}
 
@@ -118,17 +118,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The trigger tid exists.
+\ucitem The trigger \textit{tid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Disable Trigger endpoint providing the ID (tid) of the trigger to disable.
+\ucitem The Client calls the Disable Trigger endpoint providing the ID (\textit{tid}) of the trigger to disable.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The trigger tid is disabled.
+\ucitem The trigger \textit{tid} is disabled.
 
 \end{ucbox}
 
@@ -139,17 +139,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The trigger tid exists
+\ucitem The trigger \textit{tid} exists
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Trigger endpoint providing the ID (tid) of the trigger to delete.
+\ucitem The Client calls the Delete Trigger endpoint providing the ID (\textit{tid}) of the trigger to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The trigger tid has been deleted and no longer exists in the system.
+\ucitem The trigger \textit{tid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage

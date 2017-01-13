@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:} 
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Product endpoint providing the ID (pid) of the product.
+\ucitem The Client calls the Describe Product endpoint providing the ID (\textit{pid}) of the product.
 
-\ucitem The System responds with the description (its attributes and values) of the product pid.
+\ucitem The System responds with the description (its attributes and values) of the product \textit{pid}.
 
 \textbf{Postconditions:}
 
@@ -55,11 +55,11 @@ Actors: System, Client
 
 \ucitem The Client calls the Add Product endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (pid) of the newly created product.
+\ucitem The System responds with the ID (\textit{pid}) of the newly created product.
 
 \textbf{Postconditions:}
 
-\ucitem The product described in the adding call exists in the System with the ID pid.
+\ucitem The product described in the adding call exists in the System with the ID \textit{pid}.
 
 \end{ucbox}
 
@@ -70,19 +70,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \ucitem The name attribute value provided is not used by another product.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Modify Product endpoint providing the product ID (pid) and all the values for the mandatory attributes and optionally the values for the optional ones.
+\ucitem The Client calls the Modify Product endpoint providing the product ID (\textit{pid}) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (pid) of the modified product.
+\ucitem The System responds with the ID (\textit{pid}) of the modified product.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the product pid are the ones provided in the modifying call.
+\ucitem The attribute values for the product \textit{pid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -93,17 +93,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Product endpoint providing the product ID (pid) of the product to delete.
+\ucitem The Client calls the Delete Product endpoint providing the product ID (\textit{pid}) of the product to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The product pid has been deleted and no longer exists in the system.
+\ucitem The product \textit{pid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage

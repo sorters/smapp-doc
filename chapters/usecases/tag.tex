@@ -7,17 +7,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Assign Tag to Product endpoint providing the ID (pid) of the product which to assign the tag and the name of the tag to assign.
+\ucitem The Client calls the Assign Tag to Product endpoint providing the ID (\textit{pid}) of the product which to assign the tag and the name of the tag to assign.
 
-\ucitem The System responds with the ID (tid) of the tag.
+\ucitem The System responds with the ID (\textit{tid}) of the tag.
 
 \textbf{Postconditions:}
 
-\ucitem The product pid has the tag tid assigned to it.
+\ucitem The product \textit{pid} has the tag \textit{tid} assigned to it.
 
 \end{ucbox}
 
@@ -28,19 +28,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem The tag tid exists.
+\ucitem The tag \textit{tid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Remove Tag from Product endpoint providing the ID (pid) of the product and the ID (tid) of the tag to remove.
+\ucitem The Client calls the Remove Tag from Product endpoint providing the ID (\textit{pid}) of the product and the ID (\textit{tid}) of the tag to remove.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The product pid has no longer the tag tid assigned to it.
+\ucitem The product \textit{pid} has no longer the tag \textit{tid} assigned to it.
 
 \end{ucbox}
 
@@ -51,11 +51,11 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The tag tid exists.
+\ucitem The tag \textit{tid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Get Products by Tag endpoint providing the ID (tid) of the tag.
+\ucitem The Client calls the Get Products by Tag endpoint providing the ID (\textit{tid}) of the tag.
 
 \ucitem The System responds with a list of all the products that have the tag assigned. If no products have the tag assigned, the System responds with an empty list.
 
@@ -72,13 +72,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
 \ucitem The Client calls the List Product Tags endpoint.
 
-\ucitem The System responds with a list of the tags assigned to the product pid. If the product pid has no tags assigned, the response is an empty list.
+\ucitem The System responds with a list of the tags assigned to the product \textit{pid}. If the product \textit{pid} has no tags assigned, the response is an empty list.
 
 \textbf{Postconditions:}
 

@@ -28,12 +28,12 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The customer cid exists.
+\ucitem The customer \textit{cid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Sale Orders by Customer providing the ID (cid) of the customer whose orders have to be listed.
-\ucitem The System responds with a list of the sale orders recorded in the System for the customer cid. If there are no sale orders in the System for the customer cid, the 
+\ucitem The Client calls the List Sale Orders by Customer providing the ID (\textit{cid}) of the customer whose orders have to be listed.
+\ucitem The System responds with a list of the sale orders recorded in the System for the customer \textit{cid}. If there are no sale orders in the System for the customer \textit{cid}, the 
 response is an empty list.
 
 \textbf{Postconditions:}
@@ -49,13 +49,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists.
+\ucitem The sale order \textit{soid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Sale Order endpoint providing the ID (soid) of the sale order.
+\ucitem The Client calls the Describe Sale Order endpoint providing the ID (\textit{soid}) of the sale order.
 
-\ucitem The System responds with the description (its attributes and values) of the sale order soid.
+\ucitem The System responds with the description (its attributes and values) of the sale order \textit{soid}.
 
 \textbf{Postconditions:}
 
@@ -70,17 +70,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The customer cid exists.
+\ucitem The customer \textit{cid} exists.
 
 \textbf{Event flow:}
 
 \ucitem The Client calls the Create Sale Order endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (soid) of the newly created sale order.
+\ucitem The System responds with the ID (\textit{soid}) of the newly created sale order.
 
 \textbf{Postconditions:}
 
-\ucitem The sale order described in the adding call exists in the System with the ID soid.
+\ucitem The sale order described in the adding call exists in the System with the ID \textit{soid}.
 
 \end{ucbox}
 
@@ -91,20 +91,20 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists.
+\ucitem The sale order \textit{soid} exists.
 
-\ucitem The customer cid exists (if modified).
+\ucitem The customer \textit{cid} exists (if modified).
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Edit Sale Order endpoint providing the sale order ID (soid) and all the values for the mandatory attributes and optionally the values for the 
+\ucitem The Client calls the Edit Sale Order endpoint providing the sale order ID (\textit{soid}) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
-\ucitem The System responds with the ID (soid) of the modified sale order.
+\ucitem The System responds with the ID (\textit{soid}) of the modified sale order.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the sale order soid are the ones provided in the modifying call.
+\ucitem The attribute values for the sale order \textit{soid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -115,17 +115,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists and its state is open.
+\ucitem The sale order \textit{soid} exists and its state is open.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Close Sale Order endpoint providing the sale order ID (soid).
+\ucitem The Client calls the Close Sale Order endpoint providing the sale order ID (\textit{soid}).
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The sale order soid’s state is closed.
+\ucitem The sale order \textit{soid}’s state is closed.
 
 \end{ucbox}
 
@@ -136,17 +136,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists and its state is closed.
+\ucitem The sale order \textit{soid} exists and its state is closed.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Open Sale Order endpoint providing the sale order ID (soid).
+\ucitem The Client calls the Open Sale Order endpoint providing the sale order ID (\textit{soid}).
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The sale order soid’s state is open.
+\ucitem The sale order \textit{soid}’s state is open.
 
 \end{ucbox}
 
@@ -157,17 +157,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists and its state is closed.
+\ucitem The sale order \textit{soid} exists and its state is closed.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Sale Order endpoint providing the ID (soid) of the sale order to delete.
+\ucitem The Client calls the Delete Sale Order endpoint providing the ID (\textit{soid}) of the sale order to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The sale order soid has been deleted and no longer exists in the system.
+\ucitem The sale order \textit{soid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 
@@ -178,13 +178,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists.
+\ucitem The sale order \textit{soid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Sale Lines from Sale Order providing the ID (soid) of the sale order which lines have to be listed.
+\ucitem The Client calls the List Sale Lines from Sale Order providing the ID (\textit{soid}) of the sale order which lines have to be listed.
 
-\ucitem The System responds with a list of the sale lines belonging to the sale order soid. If the sale order has no lines, the response is an empty list.
+\ucitem The System responds with a list of the sale lines belonging to the sale order \textit{soid}. If the sale order has no lines, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -199,13 +199,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Sale Lines by Product providing the ID (pid) of the product from which to list Sale Lines.
+\ucitem The Client calls the List Sale Lines by Product providing the ID (\textit{pid}) of the product from which to list Sale Lines.
 
-\ucitem The System responds with a list of all the Sale Lines for the product pid. If the product has no sales, the response is an empty list.
+\ucitem The System responds with a list of all the Sale Lines for the product \textit{pid}. If the product has no sales, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -220,13 +220,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale line slid exists.
+\ucitem The sale line \textit{slid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Sale Line endpoint providing the ID (slid) of the sale line.
+\ucitem The Client calls the Describe Sale Line endpoint providing the ID (\textit{slid}) of the sale line.
 
-\ucitem The System responds with the description (its attributes and values) of the purchase line plid.
+\ucitem The System responds with the description (its attributes and values) of the purchase line \textit{plid}.
 
 \textbf{Postconditions:}
 
@@ -241,20 +241,20 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order poid exists (if assigned).
+\ucitem The sale order \textit{poid} exists (if assigned).
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Create Sale Line endpoint providing the ID (pid) of the product to purchase and optionally the ID (soid) of the sale order the line has to be 
+\ucitem The Client calls the Create Sale Line endpoint providing the ID (\textit{pid}) of the product to purchase and optionally the ID (\textit{soid}) of the sale order the line has to be 
 assigned to.
 
-\ucitem The System responds with the ID (slid) of the newly created sale line.
+\ucitem The System responds with the ID (\textit{slid}) of the newly created sale line.
 
 \textbf{Postconditions:}
 
-\ucitem The sale line described in the adding call exists in the System with the ID slid.
+\ucitem The sale line described in the adding call exists in the System with the ID \textit{slid}.
 
 \end{ucbox}
 
@@ -265,22 +265,22 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale line plid exists.
+\ucitem The sale line \textit{plid} exists.
 
-\ucitem The product pid exists (if modified).
+\ucitem The product \textit{pid} exists (if modified).
 
-\ucitem The sale order soid exists (if assigned/modified).
+\ucitem The sale order \textit{soid} exists (if assigned/modified).
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Edit Sale Line endpoint providing the sale line ID (slid) and all the values for the mandatory attributes and optionally the values for the optional 
+\ucitem The Client calls the Edit Sale Line endpoint providing the sale line ID (\textit{slid}) and all the values for the mandatory attributes and optionally the values for the optional 
 ones.
 
-\ucitem The System responds with the ID (slid) of the modified sale line.
+\ucitem The System responds with the ID (\textit{slid}) of the modified sale line.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the sale line slid are the ones provided in the modifying call.
+\ucitem The attribute values for the sale line \textit{slid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -291,20 +291,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale order soid exists and its state is open.
+\ucitem The sale order \textit{soid} exists and its state is open.
 
-\ucitem The sale line slid exists.
+\ucitem The sale line \textit{slid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Assign Sale Line to Sale Order endpoint providing the sale order ID (soid) to which the line has to be assigned and the sale line ID (slid) of the 
-line to be assigned.
+\ucitem The Client calls the Assign Sale Line to Sale Order endpoint providing the sale order ID (\textit{soid}) to which the line has to be assigned and the sale line ID (\textit{slid}) of the line to be assigned.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The sale line slid is assigned to the sale order soid.
+\ucitem The sale line \textit{slid} is assigned to the sale order \textit{soid}.
 
 \end{ucbox}
 
@@ -315,23 +314,23 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale line slid exists and is for a quantity q.
+\ucitem The sale line \textit{slid} exists and is for a quantity \textit{q}.
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem The quantity q is less or equal to the stock of product pid.
+\ucitem The quantity \textit{q} is less or equal to the stock of product \textit{pid}.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Acknowledge Sale Line endpoint providing the ID (plid) of the sale line to acknowledge.
+\ucitem The Client calls the Acknowledge Sale Line endpoint providing the ID (\textit{plid}) of the sale line to acknowledge.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line plid state is ‘acknowledged’.
+\ucitem The purchase line \textit{plid} state is ‘acknowledged’.
 
-\ucitem The stock of the product pid has decreased by q.
+\ucitem The stock of the product \textit{pid} has decreased by \textit{q}.
 
 \end{ucbox}
 
@@ -342,17 +341,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The sale line slid exists.
+\ucitem The sale line \textit{slid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Sale Line endpoint providing the ID (slid) of the sale line to delete.
+\ucitem The Client calls the Delete Sale Line endpoint providing the ID (\textit{slid}) of the sale line to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The sale line slid has been deleted and no longer exists in the system.
+\ucitem The sale line \textit{slid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage

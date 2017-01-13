@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The category cid exists.
+\ucitem The category \textit{cid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Category endpoint providing the ID (cid) of the category.
+\ucitem The Client calls the Describe Category endpoint providing the ID (\textit{cid}) of the category.
 
-\ucitem The System responds with the description (its attributes and values) of the category cid.
+\ucitem The System responds with the description (its attributes and values) of the category \textit{cid}.
 
 \textbf{Postconditions:}
 
@@ -55,11 +55,11 @@ Actors: System, Client
 
 \ucitem The Client calls the Add Category endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (cid) of the newly created category.
+\ucitem The System responds with the ID (\textit{cid}) of the newly created category.
 
 \textbf{Postconditions:}
 
-\ucitem The category described in the adding call exists in the System with the ID cid.
+\ucitem The category described in the adding call exists in the System with the ID \textit{cid}.
 
 \end{ucbox}
 
@@ -70,19 +70,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The category cid exists.
+\ucitem The category \textit{cid} exists.
 
 \ucitem The name attribute value provided is not used by another category.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Modify Category endpoint providing the category ID (cid) and all the values for the mandatory attributes and optionally the values for the optional ones.
+\ucitem The Client calls the Modify Category endpoint providing the category ID (\textit{cid}) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (cid) of the modified category.
+\ucitem The System responds with the ID (\textit{cid}) of the modified category.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the category cid are the ones provided in the modifying call.
+\ucitem The attribute values for the category \textit{cid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -93,17 +93,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The category cid exists.
+\ucitem The category \textit{cid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Category endpoint providing the ID (cid) of the category to delete.
+\ucitem The Client calls the Delete Category endpoint providing the ID (\textit{cid}) of the category to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The category cid has been deleted and no longer exists in the system.
+\ucitem The category \textit{cid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 
@@ -114,13 +114,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The category cid exists.
+\ucitem The category \textit{cid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Products of Category endpoint providing the ID (cid) of the category of which the products have to be listed.
+\ucitem The Client calls the List Products of Category endpoint providing the ID (\textit{cid}) of the category of which the products have to be listed.
 
-\ucitem The Systems responds with a list of the products that belong to the category cid. If no products belong to the category cid the response is an empty list.
+\ucitem The Systems responds with a list of the products that belong to the category \textit{cid}. If no products belong to the category \textit{cid} the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -135,19 +135,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The category cid exists.
+\ucitem The category \textit{cid} exists.
 
-\ucitem The product pids exist.
+\ucitem The product \textit{pids} exist.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Assign Category to Product endpoint providing the ID (cid) of the category and the ID’s of the products for the category.
+\ucitem The Client calls the Assign Category to Product endpoint providing the ID (\textit{cid}) of the category and the ID’s of the products for the category.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The products in the list of pids belong to the category cid.
+\ucitem The products in the list of pids belong to the category \textit{cid}.
 
 \end{ucbox}
 \newpage

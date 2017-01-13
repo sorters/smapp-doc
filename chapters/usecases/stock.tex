@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the View Product Stock endpoint providing the product ID (pid).
+\ucitem The Client calls the View Product Stock endpoint providing the product ID (\textit{pid}).
 
-\ucitem The System responds with the list of stocks of the product pid. If the product pid has no stocks, the response is an empty list.
+\ucitem The System responds with the list of stocks of the product \textit{pid}. If the product \textit{pid} has no stocks, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -49,13 +49,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Get Product Stock endpoint providing the product ID (pid).
+\ucitem The Client calls the Get Product Stock endpoint providing the product ID (\textit{pid}).
 
-\ucitem The System responds with the current stock of the product pid. If the product pid has no stock, the response is 0.
+\ucitem The System responds with the current stock of the product \textit{pid}. If the product \textit{pid} has no stock, the response is 0.
 
 \textbf{Postconditions:}
 
@@ -70,19 +70,19 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem There are n items of product pid in stock, where 0 =< n. 
+\ucitem There are \textit{n} items of product \textit{pid} in stock, where 0 =< \textit{n}. 
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Add to Product Stock endpoint providing the product ID (pid) and the quantity q to add to the current stock.
+\ucitem The Client calls the Add to Product Stock endpoint providing the product ID (\textit{pid}) and the quantity \textit{q} to add to the current stock.
 
 \ucitem The System responds with the current stock quantity for the product after the adding.
 
 \textbf{Postconditions:}
 
-\ucitem The current stock of the product is n + q.
+\ucitem The current stock of the product is \textit{n} + \textit{q}.
 
 \end{ucbox}
 
@@ -93,21 +93,21 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem There are n items of product pid in stock, where 0 =< n.
+\ucitem There are \textit{n} items of product \textit{pid} in stock, where 0 =< \textit{n}.
 
-\ucitem The quantity to remove is q, where q =< n.
+\ucitem The quantity to remove is \textit{q}, where \textit{q} =< \textit{n}.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Remove from Product Stock endpoint providing the product ID (pid) and the quantity q to remove from the current stock.
+\ucitem The Client calls the Remove from Product Stock endpoint providing the product ID (\textit{pid}) and the quantity \textit{q} to remove from the current stock.
 
 \ucitem The System responds with the current stock quantity for the product after the removing.
 
 \textbf{Postconditions:}
 
-\ucitem The current stock of the product is n - q.
+\ucitem The current stock of the product is \textit{n} - \textit{q}.
 
 \end{ucbox}
 \newpage

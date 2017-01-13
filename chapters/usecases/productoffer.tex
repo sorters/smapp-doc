@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:} 
 
-\ucitem The product offer poid exists.
+\ucitem The product offer \textit{poid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Product Offer endpoint providing the ID (poid) of the product offer.
+\ucitem The Client calls the Describe Product Offer endpoint providing the ID (\textit{poid}) of the product offer.
 
-\ucitem The System responds with the description (its attributes and values) of the product offer poid.
+\ucitem The System responds with the description (its attributes and values) of the product offer \textit{poid}.
 
 \textbf{Postconditions:}
 
@@ -48,9 +48,9 @@ Actors: System, Client
 Actors: System, Client
 
 \textbf{Preconditions:} 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem The provider prid exists.
+\ucitem The provider \textit{prid} exists.
 
 \ucitem A product offer for the same product and provider does not exist.
 
@@ -58,11 +58,11 @@ Actors: System, Client
 
 \ucitem The Client calls the Add Product Offer endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (poid) of the newly created product offer.
+\ucitem The System responds with the ID (\textit{poid}) of the newly created product offer.
 
 \textbf{Postconditions:}
 
-\ucitem The product offer described in the adding call exists in the System with the ID poid.
+\ucitem The product offer described in the adding call exists in the System with the ID \textit{poid}.
 
 \end{ucbox}
 
@@ -73,17 +73,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product offer poid exists.
+\ucitem The product offer \textit{poid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Modify Product Offer endpoint providing the product offer ID (poid) and all the values for the mandatory attributes and optionally the values for the optional ones.
+\ucitem The Client calls the Modify Product Offer endpoint providing the product offer ID (\textit{poid}) and all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (poid) of the modified product offer.
+\ucitem The System responds with the ID (\textit{poid}) of the modified product offer.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the product offer poid are the ones provided in the modifying call.
+\ucitem The attribute values for the product offer \textit{poid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -94,17 +94,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product offer poid exists.
+\ucitem The product offer \textit{poid} exists and is not referenced by a trigger.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Product Offer endpoint providing the product offer ID (poid) of the product offer to delete.
+\ucitem The Client calls the Delete Product Offer endpoint providing the product offer ID (\textit{poid}) of the product offer to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The product offer poid has been deleted and no longer exists in the system.
+\ucitem The product offer \textit{poid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage

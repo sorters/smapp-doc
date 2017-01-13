@@ -28,13 +28,13 @@ Actors: System, Client
 
 \textbf{Preconditions:} 
 
-\ucitem The purchase order poid exists.
+\ucitem The purchase order \textit{poid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Purchase Order endpoint providing the ID (poid) of the purchase order.
+\ucitem The Client calls the Describe Purchase Order endpoint providing the ID (\textit{poid}) of the purchase order.
 
-\ucitem The System responds with the description (its attributes and values) of the purchase order poid.
+\ucitem The System responds with the description (its attributes and values) of the purchase order \textit{poid}.
 
 \textbf{Postconditions:}
 
@@ -55,11 +55,11 @@ Actors: System, Client
 
 \ucitem The Client calls the Create Purchase Order endpoint providing all the values for the mandatory attributes and optionally the values for the optional ones.
 
-\ucitem The System responds with the ID (poid) of the newly created purchase order.
+\ucitem The System responds with the ID (\textit{poid}) of the newly created purchase order.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase order described in the adding call exists in the System with the ID poid.
+\ucitem The purchase order described in the adding call exists in the System with the ID \textit{poid}.
 
 \end{ucbox}
 
@@ -70,18 +70,18 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists.
+\ucitem The purchase order \textit{poid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Edit Purchase Order endpoint providing the purchase order ID (poid) and all the values for the mandatory attributes and optionally the values for the 
+\ucitem The Client calls the Edit Purchase Order endpoint providing the purchase order ID (\textit{poid}) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
-\ucitem The System responds with the ID (poid) of the modified purchase order.
+\ucitem The System responds with the ID (\textit{poid}) of the modified purchase order.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the purchase order poid are the ones provided in the modifying call.
+\ucitem The attribute values for the purchase order \textit{poid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -92,17 +92,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists and its state is open.
+\ucitem The purchase order \textit{poid} exists and its state is open.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Close Purchase Order endpoint providing the purchase order ID (poid).
+\ucitem The Client calls the Close Purchase Order endpoint providing the purchase order ID (\textit{poid}).
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase order poid’s state is closed.
+\ucitem The purchase order \textit{poid}’s state is closed.
 
 \end{ucbox}
 
@@ -113,17 +113,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists and its state is closed.
+\ucitem The purchase order \textit{poid} exists and its state is closed.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Open Purchase Order endpoint providing the purchase order ID (poid).
+\ucitem The Client calls the Open Purchase Order endpoint providing the purchase order ID (\textit{poid}).
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase order poid’s state is open.
+\ucitem The purchase order \textit{poid}’s state is open.
 
 \end{ucbox}
 
@@ -134,17 +134,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists and its state is closed.
+\ucitem The purchase order \textit{poid} exists and its state is closed.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Purchase Order endpoint providing the ID (poid) of the purchase order to delete.
+\ucitem The Client calls the Delete Purchase Order endpoint providing the ID (\textit{poid}) of the purchase order to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase order poid has been deleted and no longer exists in the system.
+\ucitem The purchase order \textit{poid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 
@@ -155,13 +155,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists.
+\ucitem The purchase order \textit{poid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Purchase Order Lines providing the ID (poid) of the purchase order which lines have to be listed.
+\ucitem The Client calls the List Purchase Order Lines providing the ID (\textit{poid}) of the purchase order which lines have to be listed.
 
-\ucitem The System responds with a list of the purchase lines belonging to the purchase order poid. If the purchase order has no lines, the response is an empty list.
+\ucitem The System responds with a list of the purchase lines belonging to the purchase order \textit{poid}. If the purchase order has no lines, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -176,13 +176,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Purchase Lines by Product providing the ID (pid) of the product from which to list Purchase Lines.
+\ucitem The Client calls the List Purchase Lines by Product providing the ID (\textit{pid}) of the product from which to list Purchase Lines.
 
-\ucitem The System responds with a list of all the Purchase Lines for the product pid. If the product has no purchases, the response is an empty list.
+\ucitem The System responds with a list of all the Purchase Lines for the product \textit{pid}. If the product has no purchases, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -197,13 +197,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The provider prid exists.
+\ucitem The provider \textit{prid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the List Purchase Lines by Provider providing the ID (prid) of the provider from which to list Purchase Lines.
+\ucitem The Client calls the List Purchase Lines by Provider providing the ID (\textit{prid}) of the provider from which to list Purchase Lines.
 
-\ucitem The System responds with a list of all the Purchase Lines for the provider prid. If the provider has no lines, the response is an empty list.
+\ucitem The System responds with a list of all the Purchase Lines for the provider \textit{prid}. If the provider has no lines, the response is an empty list.
 
 \textbf{Postconditions:}
 
@@ -218,13 +218,13 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase line plid exists.
+\ucitem The purchase line \textit{plid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Describe Purchase Line endpoint providing the ID (plid) of the purchase line.
+\ucitem The Client calls the Describe Purchase Line endpoint providing the ID (\textit{plid}) of the purchase line.
 
-\ucitem The System responds with the description (its attributes and values) of the purchase line plid.
+\ucitem The System responds with the description (its attributes and values) of the purchase line \textit{plid}.
 
 \textbf{Postconditions:}
 
@@ -239,23 +239,23 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists (if assigned).
+\ucitem The purchase order \textit{poid} exists (if assigned).
 
-\ucitem The product pid exists.
+\ucitem The product \textit{pid} exists.
 
-\ucitem The provider prid exists.
+\ucitem The provider \textit{prid} exists.
 
-\ucitem The product offer pofid exists (if referenced).
+\ucitem The product offer \textit{pofid} exists (if referenced).
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Create Purchase Line endpoint providing the ID (pid) of the product to purchase and its unit price, or the ID (pofid) of the product offer of the product to purchase, and optionally the ID (poid) of the purchase order the line has to be assigned to.
+\ucitem The Client calls the Create Purchase Line endpoint providing the ID (\textit{pid}) of the product to purchase and its unit price, or the ID (\textit{pofid}) of the product offer of the product to purchase, and optionally the ID (\textit{poid}) of the purchase order the line has to be assigned to.
 
-\ucitem The System responds with the ID (plid) of the newly created purchase line.
+\ucitem The System responds with the ID (\textit{plid}) of the newly created purchase line.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line described in the adding call exists in the System with the ID plid. If a product offer is referenced but a unit price was provided, the unit price provided overrides the one of the product offer.
+\ucitem The purchase line described in the adding call exists in the System with the ID \textit{plid}. If a product offer is referenced but a unit price was provided, the unit price provided overrides the one of the product offer.
 
 \end{ucbox}
 
@@ -266,24 +266,24 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase line plid exists.
+\ucitem The purchase line \textit{plid} exists.
 
-\ucitem The product pid exists (if modified).
+\ucitem The product \textit{pid} exists (if modified).
 
-\ucitem The purchase order poid exists (if assigned/modified).
+\ucitem The purchase order \textit{poid} exists (if assigned/modified).
 
-\ucitem The provider prid exists (if modified).
+\ucitem The provider \textit{prid} exists (if modified).
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Edit Purchase Line endpoint providing the purchase line ID (plid) and all the values for the mandatory attributes and optionally the values for the 
+\ucitem The Client calls the Edit Purchase Line endpoint providing the purchase line ID (\textit{plid}) and all the values for the mandatory attributes and optionally the values for the 
 optional ones.
 
-\ucitem The System responds with the ID (plid) of the modified purchase line.
+\ucitem The System responds with the ID (\textit{plid}) of the modified purchase line.
 
 \textbf{Postconditions:}
 
-\ucitem The attribute values for the purchase line plid are the ones provided in the modifying call.
+\ucitem The attribute values for the purchase line \textit{plid} are the ones provided in the modifying call.
 
 \end{ucbox}
 
@@ -294,20 +294,20 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase order poid exists and its state is open.
+\ucitem The purchase order \textit{poid} exists and its state is open.
 
-\ucitem The purchase line plid exists.
+\ucitem The purchase line \textit{plid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Assign Purchase Line to Purchase Order endpoint providing the purchase order ID (poid) to which the line has to be assigned and the purchase line ID (
-plid) of the line to be assigned.
+\ucitem The Client calls the Assign Purchase Line to Purchase Order endpoint providing the purchase order ID (\textit{poid}) to which the line has to be assigned and the purchase line ID (
+\textit{plid}) of the line to be assigned.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line plid is assigned to the purchase order poid.
+\ucitem The purchase line \textit{plid} is assigned to the purchase order \textit{poid}.
 
 \end{ucbox}
 
@@ -318,21 +318,21 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase line plid exists and is for a quantity q.
+\ucitem The purchase line \textit{plid} exists and is for a quantity \textit{q}.
 
-\ucitem The product pid exists. 
+\ucitem The product \textit{pid} exists. 
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Acknowledge Purchase Line endpoint providing the ID (plid) of the purchase line to acknowledge.
+\ucitem The Client calls the Acknowledge Purchase Line endpoint providing the ID (\textit{plid}) of the purchase line to acknowledge.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line plid state is ‘acknowledged’.
+\ucitem The purchase line \textit{plid} state is ‘acknowledged’.
 
-\ucitem The stock of the product pid has increased by q.
+\ucitem The stock of the product \textit{pid} has increased by \textit{q}.
 
 \end{ucbox}
 
@@ -343,17 +343,17 @@ Actors: System, Client
 
 \textbf{Preconditions:}
 
-\ucitem The purchase line plid exists.
+\ucitem The purchase line \textit{plid} exists.
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Purchase Line endpoint providing the ID (plid) of the purchase line to delete.
+\ucitem The Client calls the Delete Purchase Line endpoint providing the ID (\textit{plid}) of the purchase line to delete.
 
 \ucitem The System responds with no errors.
 
 \textbf{Postconditions:}
 
-\ucitem The purchase line plid has been deleted and no longer exists in the system.
+\ucitem The purchase line \textit{plid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
 \newpage
