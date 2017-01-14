@@ -1,22 +1,22 @@
 This section presents an explanation on the design of the solution from a technical point of view and the reasons behind it. Its main points are the description of its architecture, followed by an explanation of the framework and the technologies which the implementation is based on, the reasons for it, and the pros and cons of the solution, as well as a more detailed insight on several aspects of the project development and workflow, such as testing, data persistence, deployment and the overall infrastructure.
 
 \section{Why an API?}
-Using an API as the core of the solution allows a decoupling that is key to the idea of the whole project. The API will provide access to the business logic in modular ways, giving the potential clients plenty of possibilities to develop or use different features according to their needs.
+Using an API as the core of the solution allows a decoupling that is key to the idea of the whole project. The API will provide access to the business logic in modular ways, providing the potential clients with a wide array of possibilities to develop or use different features according to their needs.
 
-With libraries like ReactJS, Angular and other similar frameworks it makes sense to provide a backend platform fully decoupled from any frontend. The backend provides the business logic while the frontend decides and defines how the interaction with the user works. Taking this into account, the API is designed with the intention to provide low level decoupled interactions the complete the business logic but don’t condition the interaction with any of them.
+With libraries like ReactJS, Angular and other similar frameworks it makes sense to provide a backend platform fully decoupled from any frontend. The backend provides the business logic while the frontend decides and defines how the interaction with the user works. Taking this into account, the API is designed with the intention to provide low level decoupled interactions that complete the business logic but do not condition the interaction with any of them.
 
-In order to further explain this idea, there is a very direct example in the platform that can be used to depict a probable situation. There are two endpoints on the API that are used for increasing or decreasing the stock of a product. At the conceptual level, these endpoints are closely related to buying from a provider (and thus increasing the stock) and selling products to a customer (and thus decreasing it). While it could make sense to have this logic directly coupled to endpoints related to buying or selling orders, having these logics separated, although meaning some extra work in other fronts, makes it easier for different clients with different needs to use these endpoints through their own custom buying and selling logics.
+In order to further explain this idea, there is a very direct example in the platform that can be used to depict a probable situation. There are two endpoints on the API that are used for increasing or decreasing the stock of a product. At the conceptual level, these endpoints are closely related to buying from a provider (and thus increasing the stock) and selling products to a customer (and thus decreasing it). While it could make sense to couple this logic directly to endpoints related to buying or selling orders, having these logics separated, although it would imply some extra work in other fronts, makes it easier for different clients with different needs to use these endpoints through their own custom buying and selling logics.
 
 \section{Architecture}
 Following is a high-level diagram of the overall architecture for the solution with a general explanation of each of its parts.
 
 \includegraphics[width=\textwidth]{oa.png}
 
-For this particular instance, the app (the API backend) is hosted and run in a dedicated server. The database is also hosted in the same server. This server is managed through and administrator interface. Throughout the development of the project the management has been done through SSH from the administrator computer to the hosting server. From this server the API is exposed, and consumed from two different fronts. 
+For this particular instance, the app (the API backend) is hosted and run in a dedicated server. The database is also hosted in the same server. This server is managed through an administrator interface. Throughout the development of the project the management has been done through SSH from the administrator computer to the hosting server. From this server the API is exposed and consumed from two different fronts. 
 
-On on side clients in the main server’s LAN can directly access the API. This would mimic having a server in, for example a warehouse that has also POS’s (points of sale), which would be the computers or devices that access through the same LAN or WAN.
+On one side clients in the main server’s LAN can directly access the API. This would mimic having a server in, for example, a warehouse that has also POS (points of sale), which would be the computers or devices that access through the same LAN or WAN.
 
-On the other side the API is optionally exposed on the internet so it can be accessed from other devices and client applications. An example scenario for this would be to build a read-only mobile application to view reports and business data from the application.
+On the other side the API is optionally exposed on the Internet so it can be accessed from other devices and client applications. An example scenario for this would be to build a read-only mobile application to view reports and business data from the application.
 
 Note that this design is for the demo implementation. The system is built so it can adapt to different architectures. For example, as it is seen in the diagram, the application and the database are stored in the same server. In other instances the database could be hosted in a dedicated server.
 
@@ -24,9 +24,9 @@ Note that this design is for the demo implementation. The system is built so it 
 The backbone of the project, the API that implements the business logic of the solution, is implemented in PHP 5.5.9. The reason for using this language among others are that it is very agile and straightforward. Although many would argue in favour of other technologies for projects of this type, the previous experience with this language from the people involved and the requirements of the project, such as speed and simplicity of development, make it a good choice.
 
 \section{Laravel}
-Laravel is an open-source PHP framework created in 2011 by Taylor Otwell as a more advanced and friendly alternative to Codeigniter and other frameworks from the moment. Although in its initial version it did not provide support for controllers, currently it’s a fully MVC (model-view-controller) oriented framework. Its key features start by being friendly, intuitive and clean, making it pretty straightforward to implement basic and simple applications using only features and capabilities provided out-of-the-box by the framework.
+Laravel is an open-source PHP framework created in 2011 by Taylor Otwell as a more advanced and friendly alternative to Codeigniter and other frameworks from the moment \cite{10}. Although in its initial version it did not provide support for controllers, currently it’s a fully MVC (model-view-controller) oriented framework. Its key features start by being friendly, intuitive and clean, making it very straightforward to implement basic and simple applications using only features and capabilities provided out-of-the-box by the framework.
 
-That said, Laravel was not the original decision. Instead the intention was to use its lighter sibling, Lumen, a lightweight version of Laravel that includes the very basics. Although using the light version would be a great opportunity for this project, it lacked a key feature that proved very important. At the moment, Lumen did not support routing on subdomains. This was key requisite in the design application, so the decision to trade lightness for this feature, which is supported on the full Laravel framework was direct.
+That said, Laravel was not the original decision. Instead the intention was to use its lighter sibling, Lumen, a lightweight version of Laravel that includes the very basics. Although using the light version would be a great opportunity for this project, it lacked a key feature that proved very important: at the moment, Lumen did not support routing on subdomains. This was key requisite in the design application, so the decision to trade lightness for this feature, which is supported on the full Laravel framework, was direct.
 
 The key points that established the decision to use this framework for this project are, to begin with, the previous knowledge and experience from the people initially involved, which reduces the learning curve and the time to get a working MVP up and running.
 
@@ -41,7 +41,7 @@ As with most of the frameworks, Laravel also provides the order and advantages o
 Finally, Laravel also comes with a friendly and intuitive templating engine. However this is not something exploited on this project so no further detail besides mention is needed.
 
 \section{Routing}
-One of the most powerful features provided by Laravel is its routing engine. Explained in a simple way, routing consists on assigning the different routes an application has (the addresses used) to their different pages, actions, controllers and so on. These routes are defined in the app/http/routes.php file. For an example, following is the most basic example of a route in Laravel, borrowed directly from the \href{https://laravel.com/docs/5.3/routing}{official Laravel documentation} \cite{10}:
+One of the most powerful features provided by Laravel is its routing engine. Explained in a simple way, routing consists on assigning the different routes an application has (the addresses used) to their different pages, actions, controllers and so on. These routes are defined in the app/http/routes.php file. For an example, following is the most basic example of a route in Laravel, borrowed directly from the \href{https://laravel.com/docs/5.3/routing}{official Laravel documentation} \cite{11}:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 Route::get('foo', function () {
@@ -61,7 +61,7 @@ Route::post('products', 'ProductsController@store');
 Route::delete('products/{id}', 'ProductsController@delete');
 \end{minted}
 
-(Note this code was extracted at the time of the documentation for the purpose of an example, and could be outdated)
+(Note that this code was extracted at the time of the documentation for the purpose of an example, and could be outdated)
 
 All the routes on the example reference the ProductsController controller, which contains the business logic related to products and answers to all the actions related to them. As it can be deduced, when reading the code for the controller, the methods index, find, store and delete can be found.
 
@@ -99,9 +99,9 @@ will define the action or page for \code{\textless some\_url\textgreater/product
 This is very useful for managing APIs, particularly their versions, as there could be different groupings, each one with a different prefix defined for every different version, and with routes that point to the pertinent controllers.
 
 \subsection{Middleware}
-The next useful feature of Laravel’s routing is the middleware definition. Middlewares are additional layers that provide logic to the routes. Arguably the most used and popular one is the Auth middleware, that provides authentication logic for the applications. Laravel allows the implementation and injection of custom middlewares but also provides some by default, the Auth one becoming native to Laravel from version 5.1 onwards, due to its popularity and widespread use.
+The next useful feature of Laravel’s routing is the middleware definition. Middlewares are additional layers that provide logic to the routes. Arguably the most used and popular one is the Auth middleware, which provides authentication logic for the applications. Laravel allows the implementation and injection of custom middlewares but also provides some by default, the Auth one becoming native to Laravel from version 5.1 onwards, due to its popularity and widespread use.
 
-The middleware used for the application is auth:api, an authentication layer for API-oriented application. In order to use the middleware it must be added to the routes. In the application it has been done in the grouping for the API calls:
+The middleware used for the application is \code{auth:api}, an authentication layer for API-oriented application. In order to use the middleware it must be added to the routes. In the application it has been done in the grouping for the API calls:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 Route::group([..., 'middleware' => ['auth:api']], function()
@@ -109,10 +109,10 @@ Route::group([..., 'middleware' => ['auth:api']], function()
 }
 \end{minted}
 
-There are several pros and cons to this system. The pros are the ease of use and the code simplicity. The cons are simply that the authentication process is transparent to the developer. This means that if the generic method is enough, there is no problem, but introducing variations or additional features and logic can be a problem.
+There are several pros and cons to this system. The pros are the ease of use and the code simplicity. The cons are simply that the authentication process is transparent to the developer. Although this is not an issue if the generic method is enough, introducing variations or additional features and logic can be a problem.
 
 \subsection{Additional features}
-Some very useful additional features related to routing in Laravel are the bootstrapped routes, such as Route::auth(); that will automatically, and in a transparent way, generate all the routes needed for an authentication platform, including login, registering capabilities, password recovery, and so on.
+Some very useful additional features related to routing in Laravel are the bootstrapped routes, such as \code{Route::auth();} that will automatically, and in a transparent way, generate all the routes needed for an authentication platform, including login, registering capabilities, password recovery, and so on.
 
 And finally, an indirect perk of this system is that the code itself provides a very clear roadmap of the application that is built. This can be seen either by reading the code itself or, for example, running the following command:
 
@@ -179,7 +179,7 @@ Here a single, specific product is retrieved, the one identified uniquely by the
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 $product = new Product();
-$product->name = ‘Sample’;
+$product->name = 'Sample';
 $product->save();
 \end{minted}
 
@@ -362,7 +362,7 @@ Scenario Steps:
  6. $I->seeResponseIsJson()
  5. $I->seeResponseCodeIs(200)
  4. $I->sendGET("/products/1/stock",[])
-…
+...
 
 FAILURES!
 Tests: 18, Assertions: 60, Failures: 1.
