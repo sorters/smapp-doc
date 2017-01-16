@@ -98,7 +98,7 @@ Actors: System, Client
 
 \textbf{Event flow:}
 
-\ucitem The Client calls the Delete Product Offer endpoint providing the product offer ID (\textit{poid}) of the product offer to delete.
+\ucitem The Client calls the Delete Product Offer endpoint providing the ID (\textit{poid}) of the product offer to delete.
 
 \ucitem The System responds with no errors.
 
@@ -107,4 +107,47 @@ Actors: System, Client
 \ucitem The product offer \textit{poid} has been deleted and no longer exists in the system.
 
 \end{ucbox}
+
+\begin{ucbox}{\subsubsection{UCPOF006: List Product Offers by Product}}
+\label{UCPOF006}
+
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The product \textit{pid} exists.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the List Product Offers by Product endpoint providing the ID (\textit{pid}) of the product for which the offers are.
+
+\ucitem The System responds with a list of the product offers for the product \textit{pid}. If the product \textit{pid} has no product offers, the System responds with an empty list.
+
+\textbf{Postconditions:}
+
+\ucitem None.
+
+\end{ucbox}
+
+\begin{ucbox}{\subsubsection{UCPOF007: List Product Offers by Provider}}
+\label{UCPOF007}
+
+Actors: System, Client
+
+\textbf{Preconditions:}
+
+\ucitem The provider \textit{pid} exists.
+
+\textbf{Event flow:}
+
+\ucitem The Client calls the List Product Offers by Provider endpoint providing the ID (\textit{pid}) of the provider from which the offers are.
+
+\ucitem The System responds with a list of the product offers from the provider \textit{pid}. If the provider \textit{pid} has no product offers, the System responds with an empty list.
+
+\textbf{Postconditions:}
+
+\ucitem None.
+
+\end{ucbox}
+
 \newpage

@@ -3,7 +3,7 @@ This section follows as the next step in the evolution from the conceptual domai
 \section{Overall structure}
 The following diagram (Figure \ref{fig:smappclasses}) shows the overall structure of the application’s domain layer.
 
-The Product is the center of sorts of the diagram, as it is what, at a conceptual level, glues everything together. A Product can be classified under a Category, and can also be tagged with Tags.
+The Product is the center of the diagram, as it is what, at a conceptual level, glues everything together. A Product can be classified under a Category, and can also be tagged with Tags.
 
 A Product can be offered by a Provider, which generates a ProductOffer. A Product can be purchased from a Provider with a PurchaseLine, which is basically the representation of submitting an order for the Product to the Provider. PurchaseLines are grouped and managed under a PurchaseOrder. Once a Product has been purchased, received and acknowledged, it produces a Stock, which is the actual and real representation of having goods in storage.
 
@@ -11,21 +11,23 @@ Once a Stock exists, the Product can be sold. Products can be sold with SaleLine
 
 \begin{figure}
 	\centering
-		\includegraphics[width=\textwidth]{smappclasses.png}
+	\makebox[\columnwidth] {
+		\includegraphics[scale=0.5]{smappclasses.png}
+	}
 	\caption{Domain diagram}
 	\label{fig:smappclasses}
 \end{figure}
 
 \section{Classes}
-Following is a more in-detail explanation of each specific class, with its attributes and interactions. All the classes have implicit attributes that will not be listed individually, as they do not add conceptual value. These attributes, present in all the classes with no exception are the following:
+Following is a more detailed explanation of each specific class, with its attributes and interactions. All the classes have implicit attributes that will not be listed individually, as they do not add conceptual value. These attributes, present in all the classes with no exception are the following:
 
 \begin{itemize}
 \item id: A unique, numeric, incremental identifier.
-\item created\_on: The date of the creation of the instance of the class.
+\item created\_on: The creation date of the instance of the class.
 \item updated\_on: The date of the most recent change to the instance of the class.
 \end{itemize}
 
-Besides a couple of exceptions, these attributes are only used at an internal level by the implementation and add little to no value at the functional design.
+Besides a couple of exceptions, these attributes are only used at an internal level by the implementation and add little to no value to the functional design.
 
 \subsection{Product}
 The Product represents a good that can be purchased, stored, managed or sold. 
@@ -40,10 +42,10 @@ Its attributes are the following:
 \item unit\_price: A base sale price for the product. This will be the default price at which a unit of the product is sold, but can be overridden on a SaleLine.
 \end{itemize}
 
-The product also references the category it has assigned, if any, the tags it has assigned, if any, its stocks, the purchase lines and sale lines in which it appears, and the different offers it can have from different providers.
+The product also references the category it has assigned (if any), the tags it has assigned (if any), its stocks, the purchase lines and sale lines in which it appears, and the different offers it can have from different providers.
 
 \subsection{Category}
-A Category is a way to organise products. It usually corresponds to product families based in types or traits that differentiate certain products from each other. A straightforward example could be the case of a grocery store, that has categories like Vegetables, Fruit, Canned goods, Red meat, Fish, and so on. 
+A Category is a way to organise products. It usually corresponds to product families based on types or traits that differentiate certain products from each other. A straightforward example could be the case of a grocery store that has categories like Vegetables, Fruit, Canned goods, Red meat, Fish, and so on. 
 \begin{center}
 \includegraphics[scale=0.5]{category.png}
 \end{center}
@@ -70,7 +72,7 @@ The tag has only one attribute:
 A tag allows to retrieve all the products that are tagged by it.
 
 \subsection{Stock}
-A Stock represents existence of a number of items of a product that are in storage or holding. On other words, what the user owns and can depend on. 
+A Stock represents existence of a number of items of a product that are in storage or holding. In other words, what the user owns and can depend on. 
 \begin{center}
 \includegraphics[scale=0.5]{stock.png}
 \end{center}
@@ -78,17 +80,17 @@ A stock references a product and works with two attributes:
 
 \begin{itemize}
 \item units: The amount of items or units of the product it references.
-\item unit\_price: The price at what the unit of the product was bought. Different stocks can have different unit prices for example if they have been bought from different providers. It is useful to keep the price with the specific stock as it allows easy tracking of the real cost of the actual stock.
+\item unit\_price: The buying price for the unit of the product. Different stocks can have different unit prices, for example if they have been bought from different providers. It is useful to keep the price with the specific stock as it allows easy tracking of the real cost of the actual stock.
 \end{itemize}
 
 As well as the product, the stock references the provider from which the products were bought. Although it’s not completely necessary to have this reference kept in the stock itself, as it can be reached via other relations in the data schema as seen on the overall diagram, for efficiency purposes it is kept here. An example where this becomes useful is in reporting, specifically if the user wants to list the stocks sorted by providers.
 
-It also (optionally, although it is expected to be like this most of the time) references the purchase line from which it was originated. This is really useful for tracking purposes, as it allows to have a very concise registry of the chain the product has followed.
+It also references the purchase line from which it was originated. Although this behaviour is optional, it is expected to be like this most of the time, as this is really useful for tracking purposes, since it allows to have a very concise record of the chain the product has followed.
 
-This class has one of the exceptions regarding the created\_on attribute. This is taken into account as the stocks are processed on a FIFO basis, based on its creation date.
+This class has one of the exceptions regarding the created\_on attribute. This is taken into account as stocks are processed on a FIFO basis, depending on its creation date.
 
 \subsection{Trigger}
-A Trigger represents an action to be taken when a condition is met. In this case, a triggeris used to create a purchase order for a product when the stock has reached a certain low level.
+A Trigger represents an action to be taken when a condition is met. In this case, a trigger is used to create a purchase order for a product when the stock has reached a certain low level.
 
 \begin{center}
 \includegraphics[scale=0.5]{trigger.png}
@@ -96,7 +98,7 @@ A Trigger represents an action to be taken when a condition is met. In this case
 A trigger references a product and a product offer and has four attributes:
 
 \begin{itemize}
-\item threshold: The minimum amount of units of the product, below which the action will be triggered.
+\item threshold: The minimum amount of units of the product below which the action will be triggered.
 \item offset: The number of units of the product that must be purchased beyond the threshold.
 \item fill: If the threshold has to be met as a result of the action (purchase).
 \item enabled: If the trigger is enabled.
@@ -109,11 +111,11 @@ However, if the offset is greater than zero but the fill attribute is set to fal
 The trigger only checks and triggers according to the threshold if it is enabled.
 
 \subsection{Provider}
-This class represents a provider of products, and entity from which the user can purchase products. 
+This class represents a provider of products, an entity from which the user can purchase products. 
 \begin{center}
 \includegraphics[scale=0.5]{provider.png}
 \end{center}
-Descriptive attributes, such as contact data, can be easily added as needed, but for the time being, only the following will be implemented:
+Descriptive attributes, such as contact data, can be easily added as needed, but for the time being only the following will be implemented:
 
 \begin{itemize}
 \item name: A unique name to use as a friendly identifier for the provider.
@@ -123,18 +125,18 @@ Descriptive attributes, such as contact data, can be easily added as needed, but
 The provider can also reference all the purchase lines that have been submitted to it, as well as the currents stocks it has provided.
 
 \subsection{ProductOffer}
-This class represents a specific offer made by a provider for a product. Many offers can be made by the same customer for the same product over time, so the more recent one is the one that counts. This is the second exception regarding the created\_on attribute, which is used to determine that.
+This class represents a specific offer made by a provider for a product. Many offers can be made by the same customer for the same product over time, so the more recent one is the one to be considered. This is the second exception regarding the created\_on attribute, which is used to determine that.
 \begin{center}
 \includegraphics[scale=0.5]{productoffer.png}
 \end{center}
-Besides from it, a product offer has the following attributes:
+A product offer has the following attributes:
 
 \begin{itemize}
 \item unit\_price: the price at which the provider sells a unit of the referenced product.
-\item delivery: the estimated time that customer will take to deliver the products. This is useful to take into account while choosing from different providers to submit a purchase order.
+\item delivery: the estimated time the provider will take to deliver the products. This is useful to take into account while choosing from different providers to submit a purchase order.
 \end{itemize}
 
-A product offer references a product and a provider.
+Besides from this, a product offer references a product and a provider.
 
 \subsection{PurchaseOrder}
 A PurchaseOrder groups purchase lines to simplify submitting them. Useful cases for this can be to accumulate all the purchase lines that share a same purpose, or a provider, or a date or any other criteria in order to manage all of them at the same time.
@@ -166,7 +168,7 @@ The attributes of a purchase line are the following:
 A purchase line refers to a product, a provider, and the purchase order it belongs to.
 
 \subsection{Customer}
-This class represents a customer, or in other words, an entity to which the user sells to. 
+This class represents a customer or, in other words, an entity to which the user sells to. 
 \begin{center}
 \includegraphics[scale=0.5]{customer.png}
 \end{center}
@@ -177,10 +179,10 @@ Descriptive attributes, such as contact data, can be easily added as needed, but
 \item description: A more extensive description for additional information on the customer.
 \end{itemize}
 
-The customer can also reference all the purchase orders that have been submitted to it. As opposed to the providers being referenced in the purchase lines, the customer is references in the sale orders, and not lines, as the most common case is to deliver a complete sale order to a single customer.
+The customer can also reference all the purchase orders that have been submitted to it. As opposed to the providers being referenced in the purchase lines, the customer is referenced in the sale orders, and not lines, as the most common case is to deliver a complete sale order to a single customer.
 
 \subsection{SaleOrder}
-A sale order groups sale lines to simplify submitting them. Usually a sale order will represent an actual sale, be it of a single item or of multiple, to a single client.
+A sale order groups sale lines to simplify submitting them. Usually a sale order will represent an actual sale, be it of a single item or of multiple items, to a single client.
 \begin{center}
 \includegraphics[scale=0.5]{saleorder.png}
 \end{center}
@@ -191,10 +193,10 @@ A sale order has the following attributes:
 \item comments: A field that can contain useful comments regarding the particular sale order.
 \end{itemize}
 
-The sale order refers to the sale lines it contains and to the customer the sale is made to.
+The sale order refers to the sale lines it contains and to the customer to whom the sale is made.
 
 \subsection{SaleLine}
-This represents a sale of a specific product, in the scope of a sale order. A sale line usually causes a decrease in stock when it is accounted for and so it has to contain all the needed information in order to achieve that.
+This represents a sale of a specific product in the scope of a sale order. A sale line usually causes a decrease in stock when it is accounted for and so it has to contain all the needed information in order to achieve that.
 \begin{center}
 \includegraphics[scale=0.5]{saleline.png}
 \end{center}
@@ -202,6 +204,6 @@ The attributes of a sale line are the following:
 
 \begin{itemize}
 \item units: The amount of items of the product to sell.
-\item unit\_price (optional): If not specified, the price the customer pays per unit is the one set in the product, the base sale price. However if specified, the base price is overriden and the new one is used for the sale.
+\item unit\_price (optional): If not specified, the price the customer pays per unit is the one set in the product, the base sale price. However, if specified, the base price is overriden and the new one is used for the sale.
 \item state: The state the sale line is in. In the native implementation it can either be Open or Closed, where Open means it is pending some action, and Closed implies it has been accounted for, and a stock has been decreased by it.
 \end{itemize}

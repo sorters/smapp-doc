@@ -125,13 +125,13 @@ The output of this command is a table with the current routes that are in place,
 \includegraphics[width=\textwidth]{to.png}
 
 \section{Database}
-The database technology of choice for this project is SQLite. There are various reasons for this choice, the most important being the lightness and the simplicity of installation and use. Once the technology is installed, there is no further action required from the user to get it up and running. Although there are several technologies that are often said to be more powerful or reliable for production environments, like PostgreSQL or MySQL, these technologies are slightly more complicated to setup and maintain. Usually SQLite is disregarded for production environments because of its lightness, as if it was a sign of unreliability or the lack of ability to scale. After doing some research, however, there are no reasons to think that SQLite will not perform properly for an architecture and an infrastructure as the one explained in this project.
+The database technology of choice for this project is SQLite. There are various reasons for this choice, the most important being the lightness and the simplicity of installation and use. Once the technology is installed, there is no further action required from the user to get it up and running. Although there are several technologies that are often said to be more powerful or reliable for production environments, like PostgreSQL or MySQL, these technologies are slightly more complicated to setup and maintain. Usually SQLite is disregarded for production environments because of its lightness, as if it was a sign of unreliability or the lack of ability to scale. After doing some research \cite{12}, however, there are no reasons to think that SQLite will not perform properly for an architecture and an infrastructure as the one explained in this project.
 
 Taking all this into account, the conclusion is that SQLite offers enough advantages as to be a straightforward decision.
 
 The main advantage of this technology is that the database is basically a single file. That makes it completely standalone and easy to maintain. Backups of the database can consist in merely copying the file to a secure or redundant location. However, if further interaction is required with the database, there are database managers specific to SQLite that can fill this purpose with capabilities like data dumps, data corrections, raw querying, database management and so on.
 
-The native creation, access and management of the database occurs in a transparent way during the installation of the application, and can be done with the default parameters that are already configured in \code{config/database.php} and the \code{.env} file shipped with the standard solution.
+The native creation, access and management of the database occur in a transparent way during the installation of the application, and can be done with the default parameters that are already configured in \code{config/database.php} and the \code{.env} file shipped with the standard solution.
 
 The configuration needed for setting up the SQLite database is the following:
 
@@ -157,33 +157,33 @@ This configuration comes by default with Laravel alongside several other native 
 
 Again, the configuration looks for the \code{DB\_CONNECTION} parameter in the \code{.env} file, and if not found, in the case of this project it defaults to \code{‘sqlite’}.
 
-To change the technologie, the proper tools have to be installed and after that, having the proper configuration in place, the default can be switched to the new technology. The rest is transparent to the user.
+To change the technology, the proper tools have to be installed and after that, having the proper configuration in place, the default can be switched to the new technology. The rest is transparent to the user.
 
 Access to the database throughout the application is done through the Eloquent ORM. This ORM comes natively with Laravel and is a simple and straightforward ActiveRecord implementation.
 
 Through Eloquent, every table in the database has a related model through which the application can interact. As an example, for the table \code{products}, there is the \code{Product} model.
 
-Interaction from the application is as simple as follows, in some examples borrowed directly from the code:
+Interaction from the application is as simple as follows, in some examples borrowed directly from the code. 
+
+This line of code retrieves all the products from the database:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 $products = Product::all();
 \end{minted}
 
-This line of codes retrieves all the products from the database.
+Here a single, specific product is retrieved, the one identified uniquely by the \code{\$id}:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 $product = Product::find($id);
 \end{minted}
 
-Here a single, specific product is retrieved, the one identified uniquely by the \code{\$id}.
+Here a new product is created, it has a name assigned, and after that is saved and persisted in the database:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 $product = new Product();
 $product->name = 'Sample';
 $product->save();
 \end{minted}
-
-Here a new product is created, it has a name assigned, and after that is saved and persisted in the database.
 
 \subsection{Migrations}
 In order to create the database and its tables Laravel uses what are called migrations. Think of migrations as a version control for database schemas. Tables are created with a schema builder, which allows to define a table and its fields and parameters via source code.
@@ -240,28 +240,28 @@ public function run()
 The \code{run()} function is invoked by the \code{DatabaseSeeder} class, the native seeder provided by Laravel.
 
 \section{Authentication}
-The authentication of the API is done by using an API token.  This token is unique for each user inside an installation of the application. By default, when the application is installed, and as part of the process, a default administrator user is created via a seeder to act as the default client of the API. Credentials for this user are documented in the installation documentation, alongside instruction on how to log in and retrieve its unique token.
+The authentication of the API is done by using an API token.  This token is unique for each user inside an installation of the application. When the application is installed, by default and as part of the process a default administrator user is created via a seeder to act as the default client of the API. Credentials for this user are documented in the installation documentation, alongside instructions on how to log in and retrieve its unique token.
 
-To grant access to the API to clients it is enough to share this token. Client users and applications have to set this token in a header for every call done to the API. If the token belongs to a user in that particular system, the call can be  run. This means that there is no way to access other instances of the API even when possessing some valid token.
+To grant access to the API to clients it is enough to share this token. Client users and applications have to set this token in a header for every call done to the API. If the token belongs to a user in that particular system, the call can be  run. This means that there is no way to access other instances of the API even when possessing other valid tokens.
 
 The authentication itself is managed by Laravel’s \code{auth:api} middleware, native in version 5.2. Any passwords are stored encrypted in the database with one-way encryption using the bcrypt library.
 
 The basic implementation of the API does not manage different access roles or clearance levels at the moment, but in the future a feature like this is a must-have. The authentication logic should be able to allow read and write privileges separately, instead of full or no access, for security purposes.
 
 \section{Testing}
-Testing has a key role throughout the development of this project, as the work methodology approach has been the one of TDD, or Test Driven Development. 
+Testing has a key role throughout the development of this project, as the work methodology approach has been the one of Test Driven Development, or TDD. 
 
-The basic principle of this paradigm is to build the tests before writing the production code. Although it’s a debate open to plenty of discussion for many different communities, this presents the developer team with many advantages, being the main one the need to have a clear idea of what is being built before building it. Another consequence of this methodology is that the output, if done right, is clean and orderly code. This approach also causes, in a sort of subconscious way, to structure the architecture of the application in a sensible modular way. 
+The basic principle of this paradigm is to build the tests before writing the production code. Although it’s a debate open to plenty of discussion for many different communities, this presents the developer team with many advantages, the main one being the need to have a clear idea of what is being built before building it. Another consequence of this methodology is that the output, if done right, is clean and orderly code. This approach also causes, in a sort of subconscious way, to structure the architecture of the application in a sensible modular way. 
 
-All in all, TDD is a set of principles and guidelines that, well applied, provide many advantages towards clean code.
+All in all, TDD is a set of principles and guidelines that, if correctly applied, provide many advantages towards clean code.
 
 In order to build a comprehensive suite of tests on which to base the correctness of the code and its features, a testing framework has been integrated into the application.  The framework of choice is Codeception.
 
-Codeception is a testing framework that provides elegant and efficient testing capabilities for PHP source code. Its election as the framework of choice are due to its direct and native integration with Laravel. Installing and starting to using it is a very straightforward process.
+Codeception is a testing framework that provides elegant and efficient testing capabilities for PHP source code. Its election as the framework of choice are due to its direct and native integration with Laravel. Installing and starting to use it is a very straightforward process.
 
 After installing it via Composer, some configuration has to be done over the default one, adapting the test logic to the scenario. In the case of this project, the application is being tested by a suite of acceptance tests that work directly on the API behaviour.
 
-For this the only particular tweaks needed were the addition of a helper to manage the database (the tests occur in a temporal environment which uses the real development database) and browser capabilities, which are provided by PhpBrowser
+Towards this, the only particular tweaks needed were the addition of a helper to manage the database (the tests occur in a temporal environment which uses the real development database) and browser capabilities, which are provided by PhpBrowser
 
 \subsection{Configuration}
 Besides the default configuration, therefore, it is enough to add and configure the Db helper as follows:
@@ -278,7 +278,7 @@ modules:
            cleanup: true
 \end{minted}
 
-In this configuration, the dsn field points to the database that is being used. The other fields that are important are populate, which specifies if the database needs to be prepared with data prior to the testing, which in this case is false, and cleanup, which indicates if the database has to be rollbacked, or cleaned, once the tests have finished. To avoid inconsistencies with the development and manual testing, the database is always cleared before and after the tests, so the tests are agnostic to any other factors that otherwise could condition them, such as leftover data from seedings or manual tests, or even normal use of the API during development stages.
+In this configuration, the \code{dsn} field points to the database that is being used. The other fields that are important are \code{populate}, which specifies if the database needs to be prepared with data prior to the testing, which in this case is false, and \code{cleanup}, which indicates if the database has to be rollbacked, or cleaned, once the tests have finished. To avoid inconsistencies with the development and manual testing, the database is always cleared before and after the tests, so the tests are agnostic to any other factors that otherwise could condition them, such as leftover data from seedings or manual tests, or even normal use of the API during development stages.
 
 Once Codeception is configured to work on the project, a specific test suite is created with the following command:
 
@@ -322,7 +322,7 @@ public function CreateProductTest(ApiTester $I)
 }
 \end{minted}
 
-Some code, basically the preparation of the data for the test, that is the \code{\$sample\_} variables and the authentication process have been omitted, for cleanliness and security purposes. However, the full test suite can be found in the source code.
+Some code (basically the preparation of the data for the test, that is, the \code{\$sample\_} variables and the authentication process) has been omitted for cleanliness and security purposes. However, the full test suite can be found in the source code.
 
 Once the tests are written, they can be run with the following command:
 
@@ -330,7 +330,7 @@ Once the tests are written, they can be run with the following command:
 composer exec codecept run api
 \end{minted}
 
-Assuming the production code necessary to pass the test is correct, and the test passes, Codeception will display something similar to this:
+Assuming the production code necessary to pass the test is correct, and that the test passes, Codeception will display something similar to this:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 ProductsCest: Create a product via api (0.24s)
@@ -370,7 +370,7 @@ Tests: 18, Assertions: 60, Failures: 1.
 
 The test result shows that there is a format inconsistency between the response of the API and the expected results, as well as detailing the step in which the inconsistency has been detected (see lines 9 and 13).
 
-The next step in the development, therefore, would be to fix this explicit bug. Once all the tests are passed, one of the options is to create a new test for a production feature. After writing the test, the whole test suite should be run again, and the new test should fail. This means the test is testing something that’s new to the current implementation and therefore adds value. If the new tests doesn’t fail it can mean that either the test is no well written, or that the feature the test checks is already implemented, and therefore the new test is redundant.
+The next step in the development, therefore, would be to fix this explicit bug. Once all the tests are passed, one of the options is to create a new test for a production feature. After writing the test, the whole test suite should be run again, and the new test should fail. This means the test is testing something that is new to the current implementation and therefore adds value. If the new test doesn’t fail it can mean that either the test is not well written, or that the feature the test checks is already implemented, and therefore the new test is redundant.
 
 The other option is to refactor the current code in order to optimise it or make it more clean. After any modification to the code, the test suite can be run again to make sure nothing in the production implementation has broken as a result of code changes. This results in a very solid and reliable code base.
 
@@ -445,11 +445,11 @@ By order, this script does the following tasks:
 Once these tasks are successfully completed the application is fully deployed and ready to use.
 
 \section{Online resources}
-As well as the technical documentation for the API, a key resource is the client documentation that provides definitions and instructions to follow in order to use the API. In the case of this project, this resource is exposed online alongside the API itself, and can be found \href{http://smapp.sorters.io/docs}{here}.
+As well as the technical documentation for the API, a key resource is the client documentation that provides definitions and instructions to follow in order to use the API. In the case of this project, this resource is exposed online alongside the API itself, and can be found here: \href{http://smapp.sorters.io/docs}{http://smapp.sorters.io/docs}.
 
 This documentation is a static HTML file generated automatically using the RAML (RESTful API Modeling Language) language and the \code{raml2html} tool. RAML is a language that allows designing and specifying an API in a friendly and intuitive way. It uses YAML as the syntax of the documentation source files. As well as defining the API, it allows to generate the documentation in an automated way, and with the raml2html tool it is easy and straightforward to turn it into a static HTML page.
 
-The basic documentation, the header so to say, for an API will look similar to the following example:
+The basic documentation, or in other words the header, for an API will look similar to the following example:
 
 \begin{minted}[frame=lines,framesep=2mm,baselinestretch=1.2,bgcolor=lightgray,fontsize=\footnotesize,linenos]{php}
 #%RAML 1.0
@@ -462,7 +462,7 @@ protocols:
  - HTTP
 \end{minted}
 
-With this fragment of code, the title of the API Documentation is set, alongside the base Url used for consuming the API, its version, the media type of its responses, and the protocols it supports.
+With this fragment of code, the title of the API Documentation is set, alongside the base URL used for consuming the API, its version, the media type of its responses, and the protocols it supports.
 
 Once the basics are documented, each endpoint of the API can be described in detail. For example, the \code{/products/\{id\}} endpoint documentation is along the lines of the next example:
 
@@ -495,7 +495,7 @@ Once the basics are documented, each endpoint of the API can be described in det
        description: Unauthorized
 \end{minted}
 
-This examples describes two different methods for this endpoint, the GET and the DELETE, which correspond to HTTP calls. It states that for both (therefore this is a shared endpoint) an ID parameter is needed.
+This example describes two different methods for this endpoint, the GET and the DELETE, which correspond to HTTP calls. It states that for both an ID parameter is needed (therefore this is a shared endpoint).
 
 After that, separately for each method call, it describes every possible response, with its HTTP response code, and the body and details of the response.
 
